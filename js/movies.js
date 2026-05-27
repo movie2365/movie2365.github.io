@@ -2,23 +2,9 @@
 
 const movies = [
 
-  {
-    title: "Project Hail Mary",
-    image: "https://wsrv.nl/?url=https%3A%2F%2Fimage.tmdb.org%2Ft%2Fp%2Fw780%2FwLWvHcQz7N13DvSOTV7bHgwGXpT.jpg&output=webp&q=65&n=-1",
-    page: "movie/1"
-  },
-
-  {
-    title: "The Super Mario Galaxy Movie",
-    image: "https://wsrv.nl/?url=https%3A%2F%2Fimage.tmdb.org%2Ft%2Fp%2Fw780%2Fn5OWzWUgjl5r1VFbbx72cCgcj8X.jpg&output=webp&q=65&n=-1",
-    page: "movie/2"
-  },
-
-  {
-    title: "Avatar",
-    image: "https://images.unsplash.com/photo-1518709268805-4e9042af2176?q=80&w=1200&auto=format&fit=crop",
-    page: "movie/avatar.html"
-  }
+  {title: "Project Hail Mary", image: "https://wsrv.nl/?url=https%3A%2F%2Fimage.tmdb.org%2Ft%2Fp%2Fw780%2FwLWvHcQz7N13DvSOTV7bHgwGXpT.jpg&output=webp&q=65&n=-1", page: "movie/1"},
+  {title: "The Super Mario Galaxy Movie", image: "https://wsrv.nl/?url=https%3A%2F%2Fimage.tmdb.org%2Ft%2Fp%2Fw780%2Fn5OWzWUgjl5r1VFbbx72cCgcj8X.jpg&output=webp&q=65&n=-1", page: "movie/2"},
+  {title: "GOAT", image: "https://wsrv.nl/?url=https%3A%2F%2Fimage.tmdb.org%2Ft%2Fp%2Fw780%2F6aAsTVPSsqyD2bqYfAnOdG9g4rF.jpg&output=webp&q=65&n=-1", page: "movie/3"},
 
 ];
 
