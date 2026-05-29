@@ -30,3 +30,22 @@
   height: 100%;
   display: block;
 }
+
+.player-note{
+  width:100%;
+
+  text-align:center;
+
+  margin-top:22px;
+
+  color:#6fdcff;
+
+  font-size:24px;
+
+  font-weight:600;
+
+  padding:0 20px;
+
+  text-shadow:
+  0 0 6px rgba(0, 217, 255, 0.15);
+}
