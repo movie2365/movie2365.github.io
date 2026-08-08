@@ -265,15 +265,11 @@ function renderPlayer() {
   }
 }
 
-  buttons.addEventListener("click", event => {
-    const button = event.target.closest(".server-button");
-
-    if (button) {
-      selectServer(button.dataset.server);
-    }
-  });
-
-  selectServer(servers[0]);
+  if (availableServers.length > 0) {
+    selectServer(availableServers[0]);
+  } else {
+    fallback.classList.add("visible");
+  }
 }
 
 renderHome();
