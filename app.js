@@ -32,22 +32,19 @@ const servers = [
   iframeSources["scream-7"].Lumen = "YOUR_PERMITTED_EMBED_URL";
   iframeSources["spider-man"].Lumen = "A_DIFFERENT_PERMITTED_EMBED_URL";
 */
-const iframeSources = Object.fromEntries(
-  movies.map(movie => [
-    movie.id,
-    Object.fromEntries(servers.map(server => [server, ""]))
-  ])
-);
+const iframeSources = {
+  "scream-7": {
+    Lumen: "",
+    Helix: "",
+    Quasar: ""
+  },
 
-/* Put your permitted embed URLs below, if desired.
-
-iframeSources["scream-7"].Lumen = "";
-iframeSources["scream-7"].Helix = "";
-
-iframeSources["spider-man"].Lumen = "";
-iframeSources["spider-man"].Helix = "";
-
-*/
+  "spider-man": {
+    Lumen: "",
+    Nova: "",
+    Beam: ""
+  }
+};
 
 function escapeHtml(value) {
   return String(value).replace(/[&<>"']/g, character => ({
@@ -202,6 +199,11 @@ function renderPlayer() {
 
   const movieSources = iframeSources[movie.id] || {};
 
+  // Only include servers that exist for this movie.
+  const availableServers = servers.filter(server =>
+    Object.hasOwn(movieSources, server)
+  );
+
   info.innerHTML = `
     <div>
       <h1>${escapeHtml(movie.title)}</h1>
@@ -213,7 +215,7 @@ function renderPlayer() {
     </a>
   `;
 
-  stack.innerHTML = servers.map((server, index) => `
+  stack.innerHTML = availableServers.map((server, index) => `
     <iframe
       class="server-frame${index === 0 ? " active" : ""}"
       title="${escapeHtml(server)} player"
@@ -223,7 +225,7 @@ function renderPlayer() {
     ></iframe>
   `).join("");
 
-  buttons.innerHTML = servers.map((server, index) => `
+  buttons.innerHTML = availableServers.map((server, index) => `
     <button
       class="server-button${index === 0 ? " active" : ""}"
       type="button"
@@ -235,17 +237,11 @@ function renderPlayer() {
 
   function selectServer(server) {
     document.querySelectorAll(".server-frame").forEach(frame => {
-      frame.classList.toggle(
-        "active",
-        frame.dataset.server === server
-      );
+      frame.classList.toggle("active", frame.dataset.server === server);
     });
 
     document.querySelectorAll(".server-button").forEach(button => {
-      button.classList.toggle(
-        "active",
-        button.dataset.server === server
-      );
+      button.classList.toggle("active", button.dataset.server === server);
     });
 
     fallback.classList.toggle(
@@ -253,6 +249,21 @@ function renderPlayer() {
       !(movieSources[server] || "")
     );
   }
+
+  buttons.addEventListener("click", event => {
+    const button = event.target.closest(".server-button");
+
+    if (button) {
+      selectServer(button.dataset.server);
+    }
+  });
+
+  if (availableServers.length > 0) {
+    selectServer(availableServers[0]);
+  } else {
+    fallback.classList.add("visible");
+  }
+}
 
   buttons.addEventListener("click", event => {
     const button = event.target.closest(".server-button");
