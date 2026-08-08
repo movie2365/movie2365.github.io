@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Cineby — Watch Movies</title>
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body data-page="home">
+
+  <!-- =========================
+       HEADER
+       ========================= -->
+
+  <header class="site-header">
+
+    <a class="brand" href="index.html">
+      <span class="brand-mark">▶</span>
+      <span>Cineby</span>
+    </a>
+
+    <nav>
+
+      <a class="active" href="index.html">
+        ⌂ Home
+      </a>
+
+      <a href="search.html">
+        ▦ Browse <span class="chevron">⌄</span>
+      </a>
+
+      <a href="search.html?random=1">
+        ⊠ Random
+      </a>
+
+      <a
+        class="search-icon"
+        href="search.html"
+        aria-label="Search"
+      >
+        ⌕
+      </a>
+
+    </nav>
+
+  </header>
+
+
+  <!-- =========================
+       MAIN CONTENT
+       ========================= -->
+
+  <main>
+
+    <!-- HERO / SEARCH SECTION -->
+
+    <section class="hero">
+
+      <h1>
+        Cineby - Watch Online Movies &amp; TV Shows
+      </h1>
+
+      <p>
+        Thousands of movies and TV shows, updated daily. Just press play.
+      </p>
+
+
+      <!-- SEARCH -->
+
+      <form
+        class="search-bar"
+        action="search.html"
+      >
+
+        <span class="search-symbol">
+          ⌕
+        </span>
+
+        <input
+          name="q"
+          type="search"
+          placeholder="Search for movies or TV shows..."
+          autocomplete="off"
+        >
+
+        <button type="submit">
+          Search <span>›</span>
+        </button>
+
+      </form>
+
+
+      <!-- QUICK LINKS -->
+
+      <div class="browse-label">
+        Start browsing:
+      </div>
+
+      <div class="quick-links">
+
+        <a
+          class="quick active"
+          href="index.html"
+        >
+          ⌂ <span>Home</span>
+        </a>
+
+        <a
+          class="quick"
+          href="search.html"
+        >
+          ▦ <span>Movies</span>
+        </a>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         HOT RIGHT NOW
+         ========================= -->
+
+    <section class="trending">
+
+      <h2>
+        🔥 Hot Right Now
+      </h2>
+
+      <!--
+        JavaScript will automatically
+        generate the movie list here.
+      -->
+
+      <div
+        id="hot-list"
+        class="hot-list"
+      ></div>
+
+
+      <a
+        class="trending-link"
+        href="search.html"
+      >
+        See what's trending →
+      </a>
+
+    </section>
+
+  </main>
+
+
+  <!-- =========================
+       JAVASCRIPT
+       ========================= -->
+
+  <script src="app.js"></script>
+
+</body>
+</html>
