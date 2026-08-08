@@ -135,7 +135,7 @@ const movies = [
     title: "Spider-Man",
     year: 2002,
     rating: "7.3",
-    poster: "",
+    poster: "assets/movies/spider-man-2002.png",
     tag: "MOVIE"
   },
 
