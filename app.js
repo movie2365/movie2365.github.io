@@ -265,13 +265,6 @@ function renderPlayer() {
   }
 }
 
-  if (availableServers.length > 0) {
-    selectServer(availableServers[0]);
-  } else {
-    fallback.classList.add("visible");
-  }
-}
-
 renderHome();
 renderSearch();
 renderPlayer();
