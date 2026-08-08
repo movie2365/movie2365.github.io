@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>Watch — Cineby</title>
+
+  <link
+    rel="stylesheet"
+    href="styles.css"
+  >
+
+</head>
+
+
+<body data-page="player">
+
+
+  <!-- =========================
+       HEADER
+       ========================= -->
+
+  <header class="site-header">
+
+    <a
+      class="brand"
+      href="index.html"
+    >
+
+      <span class="brand-mark">
+        ▶
+      </span>
+
+      <span>
+        Cineby
+      </span>
+
+    </a>
+
+
+    <nav>
+
+      <a href="index.html">
+        ⌂ Home
+      </a>
+
+
+      <a href="search.html">
+        ▦ Browse <span class="chevron">⌄</span>
+      </a>
+
+
+      <a href="search.html?random=1">
+        ⊠ Random
+      </a>
+
+
+      <a
+        class="search-icon"
+        href="search.html"
+        aria-label="Search"
+      >
+        ⌕
+      </a>
+
+    </nav>
+
+  </header>
+
+
+
+  <!-- =========================
+       WATCH PAGE
+       ========================= -->
+
+  <main class="watch-page">
+
+
+    <!-- =========================
+         VIDEO PLAYER
+         ========================= -->
+
+    <div class="player-wrap">
+
+
+      <!--
+        JavaScript creates all of the
+        server iframes here.
+
+        Every server gets its own iframe.
+      -->
+
+      <div
+        id="player-stack"
+        class="player-stack"
+      ></div>
+
+
+      <!--
+        This appears when the selected
+        server doesn't have an iframe
+        source yet.
+      -->
+
+      <div
+        id="player-fallback"
+        class="player-fallback"
+      >
+
+        <span class="fallback-play">
+          ▶
+        </span>
+
+        <p>
+          Add an iframe
+          <code>src</code>
+          in
+          <code>app.js</code>
+          to start the player.
+        </p>
+
+      </div>
+
+
+    </div>
+
+
+
+    <!-- =========================
+         SERVER NOTICE
+         ========================= -->
+
+    <div class="server-notice">
+
+      ◉ Server not working?
+      Switch to another one.
+
+    </div>
+
+
+
+    <!-- =========================
+         SERVER BUTTONS
+         ========================= -->
+
+    <!--
+
+      JavaScript automatically creates
+      all 18 server buttons here.
+
+      Servers:
+
+      Lumen
+      Helix
+      Quasar
+      Comet
+      Pulsar
+      Theta
+      Spark
+      Haze
+      Nyx
+      Gale
+      Nova
+      Nebula
+      Blaze
+      Forge
+      Wisp
+      Raze
+      Flare
+      Beam
+
+    -->
+
+    <div
+      id="server-buttons"
+      class="server-buttons"
+    ></div>
+
+
+
+    <!-- =========================
+         MOVIE INFORMATION
+         ========================= -->
+
+    <section
+      id="movie-info"
+      class="movie-info"
+    ></section>
+
+
+  </main>
+
+
+
+  <!-- =========================
+       JAVASCRIPT
+       ========================= -->
+
+  <script src="app.js"></script>
+
+
+</body>
+
+</html>
