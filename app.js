@@ -14,7 +14,7 @@ const movies = [
   { id: "spider-man-2", title: "Spider-Man 2", year: 2004, rating: "7.5", poster: "assets/movies/spider-man-2-2004.png", tag: "MOVIE" },
   { id: "into-the-spider-verse", title: "Spider-Man: Into the Spider-Verse", year: 2018, rating: "8.4", poster: "", tag: "MOVIE" },
   { id: "across-the-spider-verse", title: "Spider-Man: Across the Spider-Verse", year: 2023, rating: "8.5", poster: "", tag: "MOVIE" },
-  { id: "spider-man-3", title: "Spider-Man 3", year: 2007, rating: "6.3", poster: "", tag: "MOVIE" },
+  { id: "spider-man-3", title: "Spider-Man 3", year: 2007, rating: "6.3", poster: "assets/movies/spider-man-3-2007.webp", tag: "MOVIE" },
   { id: "spider-man-no-way-home", title: "Spider-Man: No Way Home", year: 2021, rating: "8.2", poster: "", tag: "MOVIE" },
   { id: "the-amazing-spider-man", title: "The Amazing Spider-Man", year: 2012, rating: "6.9", poster: "", tag: "MOVIE" },
   { id: "the-amazing-spider-man-2", title: "The Amazing Spider-Man 2", year: 2014, rating: "6.6", poster: "", tag: "MOVIE" }
@@ -36,6 +36,7 @@ const servers = [
 const iframeSources = {
   "spider-man": {Lumen: "https://cinesrc.st/embed/movie/557", Helix: "https://vidzen.fun/movie/557", Quasar: "https://airflix1.com/embed/movie/557",  Spark: "https://player.videasy.to/movie/557", Haze: "https://primesrc.me/embed/movie?tmdb=557", Nyx: "https://vidfast.vc/movie/557", Gale: "https://vaplayer.ru/embed/movie/557", Nova: "https://peachify.top/embed/movie/557", Nebula: "https://play.xpass.top/e/movie/557", Blaze: "https://vidup.to/movie/557", Forge: "https://player.zxcstream.xyz/player/movie/557", Raze: "https://vsembed.ru/embed/movie/557",  Beam: "https://vidcore.net/movie/557"},
   "spider-man-2": {Lumen: "https://cinesrc.st/embed/movie/558", Helix: "https://vidzen.fun/movie/558", Quasar: "https://airflix1.com/embed/movie/558",  Spark: "https://player.videasy.to/movie/558", Haze: "https://primesrc.me/embed/movie?tmdb=558", Nyx: "https://vidfast.vc/movie/558", Gale: "https://vaplayer.ru/embed/movie/558", Nova: "https://peachify.top/embed/movie/558", Nebula: "https://play.xpass.top/e/movie/558", Blaze: "https://vidup.to/movie/558", Forge: "https://player.zxcstream.xyz/player/movie/558", Raze: "https://vsembed.ru/embed/movie/558",  Beam: "https://vidcore.net/movie/558"},
+  "spider-man-2": {Lumen: "https://cinesrc.st/embed/movie/559", Helix: "https://vidzen.fun/movie/559", Quasar: "https://airflix1.com/embed/movie/559",  Spark: "https://player.videasy.to/movie/559", Haze: "https://primesrc.me/embed/movie?tmdb=559", Nyx: "https://vidfast.vc/movie/559", Gale: "https://vaplayer.ru/embed/movie/559", Nova: "https://peachify.top/embed/movie/559", Nebula: "https://play.xpass.top/e/movie/559", Blaze: "https://vidup.to/movie/559", Forge: "https://player.zxcstream.xyz/player/movie/559", Raze: "https://vsembed.ru/embed/movie/559",  Beam: "https://vidcore.net/movie/559"},
 };
 
 function escapeHtml(value) {
