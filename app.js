@@ -33,17 +33,7 @@ const servers = [
   iframeSources["spider-man"].Lumen = "A_DIFFERENT_PERMITTED_EMBED_URL";
 */
 const iframeSources = {
-  "scream-7": {
-    Lumen: "",
-    Helix: "",
-    Quasar: ""
-  },
-
-  "spider-man": {
-    Lumen: "",
-    Nova: "",
-    Beam: ""
-  }
+  "spider-man": {Lumen: "https://cinesrc.st/embed/movie/557", Helix: "https://vidzen.fun/movie/557", Quasar: "https://airflix1.com/embed/movie/557", Comet: "https://vidnest.fun/movie/557", Pulsar: "https://cinemaos.tech/player/557", Theta: "https://vidrock.ru/movie/557", Spark: "https://player.videasy.to/movie/557", Haze: "https://primesrc.me/embed/movie?tmdb=557", Nyx: "https://vidfast.vc/movie/557", Gale: "https://vaplayer.ru/embed/movie/557", Nova: "https://peachify.top/embed/movie/557", Nebula: "https://play.xpass.top/e/movie/557", Blaze: "https://vidup.to/movie/557", Forge: "https://player.zxcstream.xyz/player/movie/557", Wisp: "https://moviesapi.to/movie/557", Raze: "https://vsembed.ru/embed/movie/557", Flare: "https://www.vidking.net/embed/movie/557", Beam: "https://vidcore.net/movie/557"}
 };
 
 function escapeHtml(value) {
