@@ -1354,3 +1354,149 @@ code {
   }
 
 }
+
+/* =====================
+   SHOW PAGE
+===================== */
+
+
+.show-page {
+    width: 1200px;
+    max-width: 90%;
+    margin: auto;
+    padding-top: 40px;
+}
+
+
+
+.show-header {
+
+    display:flex;
+    gap:30px;
+    align-items:center;
+    margin-bottom:40px;
+
+}
+
+
+
+.show-poster {
+
+    width:220px;
+    height:330px;
+    object-fit:cover;
+    border-radius:12px;
+
+}
+
+
+
+.show-header h1 {
+
+    font-size:40px;
+    margin-bottom:10px;
+
+}
+
+
+
+.show-header p {
+
+    color:#aaa;
+    font-size:18px;
+
+}
+
+
+
+
+.episodes-section {
+
+    margin-top:40px;
+
+}
+
+
+
+.episodes-header {
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+}
+
+
+
+.episodes-header h2 {
+
+    font-size:28px;
+
+}
+
+
+
+#season-select {
+
+    background:#111;
+    color:white;
+    border:1px solid #333;
+    padding:12px 20px;
+    border-radius:8px;
+
+}
+
+
+
+
+.episode-card {
+
+    display:flex;
+    align-items:center;
+    gap:20px;
+
+    background:#151515;
+
+    border:1px solid #292929;
+
+    padding:20px;
+
+    margin:12px 0;
+
+    border-radius:10px;
+
+    color:white;
+
+    text-decoration:none;
+
+    transition:.2s;
+
+}
+
+
+
+.episode-card:hover {
+
+    background:#222;
+
+}
+
+
+
+.episode-number {
+
+    font-size:22px;
+    color:#aaa;
+    width:40px;
+
+}
+
+
+
+.episode-card span {
+
+    margin-left:auto;
+    color:red;
+    font-size:22px;
+
+}
