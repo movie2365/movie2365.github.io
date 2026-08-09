@@ -21,6 +21,11 @@ const movies = [
   { id: "spider-man-brand-new-day", title: "Spider-Man: Brand New Day", year: 2026, rating: "7.9", poster: "https://cineby.ws/images/posters/movies/spider-man-brand-new-day-2026.webp", tag: "MOVIE" }
 ];
 
+const shows = [
+  {id: "abbott-elementary", title: "Abbott Elementary", year: 2021, rating: "8.2", poster: "assets/shows/abbott-elementary.png", tag: "TV SHOW",
+   seasons: { 1: [ "Pilot", "Light Bulb", "Wishlist", "New Tech", "Student Transfer", "Gifted Program", "Art Teacher"], 2: [ "Development Day", "Wrong Delivery", "Story Samurai", } }
+];
+
 const servers = [
   "Helix", "Lumen", "Quasar", "Spark", 
   "Haze", "Nyx", "Gale", "Nova", "Nebula",
