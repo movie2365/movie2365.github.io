@@ -2,76 +2,115 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CineVault</title>
 
-  <title>Show</title>
+<link rel="stylesheet" href="style.css">
 
-  <link rel="stylesheet" href="style.css">
 </head>
 
 
 <body>
 
 
-  <!-- HEADER -->
-  <header class="site-header">
+<header class="navbar">
 
     <a href="index.html" class="logo">
-      CineVault
+        CineVault
     </a>
 
 
     <nav>
-
-      <a href="index.html">
-        Home
-      </a>
-
-      <a href="search.html">
-        Browse
-      </a>
-
+        <a href="index.html">Home</a>
+        <a href="search.html">Browse</a>
     </nav>
 
-  </header>
+</header>
+
+
+
+<main class="show-page">
+
+
+<!-- SHOW INFO -->
+
+<section id="show-info" class="movie-info">
+
+</section>
+
+
+
+
+<!-- PLAYER -->
+
+<section class="player-area">
+
+
+<div id="show-player-stack" class="player-stack">
+
+</div>
+
+
+
+<div id="player-fallback">
+
+Server not working. Switch to another one.
+
+</div>
+
+
+
+<div id="server-buttons" class="server-buttons">
+
+</div>
+
+
+</section>
 
 
 
 
 
-  <!-- SHOW CONTENT -->
-  <main class="show-container">
+<!-- EPISODES -->
+
+<section class="episodes-section">
 
 
-    <div id="show-page">
-
-      <!-- JavaScript loads show info here -->
-
-    </div>
-
-
-  </main>
+<h2>
+Episodes
+</h2>
 
 
 
+<div class="season-controls">
+
+<select id="season-select">
+
+</select>
 
 
-  <!-- FOOTER -->
-  <footer>
-
-    <p>
-      CineVault
-    </p>
-
-  </footer>
-
+</div>
 
 
 
+<div id="episodes-list">
 
-  <script src="app.js"></script>
+</div>
+
+
+</section>
+
+
+
+</main>
+
+
+
+
+
+<script src="app.js"></script>
 
 </body>
 
