@@ -37,7 +37,23 @@ const servers = [
 const movieIds = {
   "spider-man": "557",
   "spider-man-2": "558",
-  "spider-man-3": "559"
+  "spider-man-3": "559",
+  "my-dearest-senorita": "559",
+  "scream-7": "559",
+  "swapped": "559",
+  "send-help": "559",
+  "outcome": "559",
+  "the-gates": "559",
+  "thrash": "559",
+  "the-devil-wears-prada-2": "559",
+  "michael": "559",
+  "apex": "559",
+  "spider-man-far-from-home": "559",
+  "into-the-spider-verse": "559",
+  "across-the-spider-verse": "559",
+  "spider-man-no-way-home": "559",
+  "the-amazing-spider-man": "559",
+  "the-amazing-spider-man-2": "559",
 };
 
 const serverUrlPatterns = {
