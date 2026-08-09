@@ -55,6 +55,7 @@ const movieIds = {
   "spider-man-no-way-home": "634649",
   "the-amazing-spider-man": "1930",
   "the-amazing-spider-man-2": "102382",
+  "spider-man-brand-new-day": "969681",
 };
 
 const serverUrlPatterns = {
