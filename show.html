@@ -1,73 +1,110 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>CineVault</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="assets/movie2365-logo.png" type="image/png">
 
+  <title>Movie2365 — TV Show</title>
+
+  <link rel="stylesheet" href="styles.css">
 </head>
 
-<body>
+
+<body data-page="show">
 
 
-<header class="navbar">
+<!-- =========================
+     HEADER
+     ========================= -->
 
-    <div class="logo">
-        <span class="logo-icon">▶</span>
-        CineVault
-    </div>
+<header class="site-header">
+
+  <a class="brand" href="index.html">
+
+    <img
+      src="assets/movie2365-logo.png"
+      alt="Movie2365 logo"
+      style="width: 30px !important; height: 36px !important; object-fit: contain; flex: 0 0 36px;"
+    >
+
+    <span>Movie2365</span>
+
+  </a>
 
 
-    <nav>
-        <a href="index.html">⌂ Home</a>
-        <a href="search.html">▦ Browse</a>
-        <a href="random.html">⤨ Random</a>
-    </nav>
+  <nav>
+
+    <a href="index.html">
+      ⌂ Home
+    </a>
+
+
+    <a class="active" href="search.html">
+      ▦ Browse
+    </a>
+
+
+    <a href="search.html?random=1">
+      ⊠ Random
+    </a>
+
+
+    <a
+      class="search-icon"
+      href="search.html"
+      aria-label="Search"
+    >
+      ⌕
+    </a>
+
+  </nav>
 
 </header>
 
 
 
-<main class="show-page">
+<!-- =========================
+     SHOW CONTENT
+     ========================= -->
+
+<main>
+
+  <section class="show-page">
 
 
-<section id="show-info">
-
-</section>
+    <div id="show-info"></div>
 
 
+    <section class="episodes-section">
 
-<section class="episodes-section">
-
-
-<div class="episodes-header">
-
-<h2>
-Episodes
-</h2>
+      <h2>
+        Episodes
+      </h2>
 
 
-<select id="season-select">
-</select>
+      <select id="season-select"></select>
 
 
-</div>
+      <div
+        id="episodes-list"
+        class="episodes-list"
+      ></div>
 
 
-
-<div id="episodes-list">
-
-</div>
+    </section>
 
 
-</section>
+  </section>
 
 
 </main>
 
 
+
 <script src="app.js"></script>
+
 
 </body>
 </html>
