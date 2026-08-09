@@ -70,7 +70,6 @@ const serverUrlPatterns = {
   Forge: id => `https://player.zxcstream.xyz/player/movie/${id}`,
   Raze: id => `https://vsembed.ru/embed/movie/${id}`,
   Beam: id => `https://vidcore.net/movie/${id}`,
-
 };
 
 const iframeSources = Object.fromEntries(
@@ -161,6 +160,11 @@ function renderHome() {
   `).join("");
 }
 
+
+/* =========================================================
+   SEARCH
+   ========================================================= */
+
 function renderSearch() {
   const input = document.querySelector("#search-input");
   const grid = document.querySelector("#results-grid");
@@ -179,146 +183,347 @@ function renderSearch() {
 
   input.value = query;
 
+
+  /*
+    Turns things like:
+
+    Spider-Man
+    spider man
+    SPIDER-MAN
+    spider.man
+
+    into:
+
+    spiderman
+  */
+
+  function normalize(text) {
+    return String(text)
+      .toLowerCase()
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "")
+      .replace(/[^a-z0-9]/g, "");
+  }
+
+
+  /*
+    Breaks a search into useful words.
+
+    "amazing spider man"
+
+    becomes:
+
+    ["amazing", "spider", "man"]
+  */
+
+  function getWords(text) {
+    return String(text)
+      .toLowerCase()
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "")
+      .split(/[^a-z0-9]+/)
+      .filter(Boolean);
+  }
+
+
+  /*
+    Levenshtein distance lets us detect typos.
+
+    Example:
+
+    spider
+    spidr
+
+    are very close.
+  */
+
+  function levenshtein(a, b) {
+    if (a === b) return 0;
+
+    if (!a.length) return b.length;
+    if (!b.length) return a.length;
+
+    let previous = Array.from(
+      { length: b.length + 1 },
+      (_, i) => i
+    );
+
+    for (let i = 1; i <= a.length; i++) {
+      const current = [i];
+
+      for (let j = 1; j <= b.length; j++) {
+        const insertCost = current[j - 1] + 1;
+        const deleteCost = previous[j] + 1;
+        const replaceCost =
+          previous[j - 1] + (a[i - 1] === b[j - 1] ? 0 : 1);
+
+        current[j] = Math.min(
+          insertCost,
+          deleteCost,
+          replaceCost
+        );
+      }
+
+      previous = current;
+    }
+
+    return previous[b.length];
+  }
+
+
+  /*
+    Returns how similar two words are.
+
+    1.0 = identical
+    0.8 = very close
+    0.5 = somewhat close
+    0.0 = completely different
+  */
+
+  function wordSimilarity(a, b) {
+    if (!a || !b) return 0;
+
+    if (a === b) return 1;
+
+    if (a.includes(b) || b.includes(a)) {
+      return 0.9;
+    }
+
+    const distance = levenshtein(a, b);
+
+    return Math.max(
+      0,
+      1 - distance / Math.max(a.length, b.length)
+    );
+  }
+
+
+  /*
+    Scores how well a movie matches a search.
+
+    Higher score = better match.
+  */
+
+  function searchScore(movie, query) {
+    const title = movie.title;
+
+    const normalizedTitle = normalize(title);
+    const normalizedQuery = normalize(query);
+
+    const titleWords = getWords(title);
+    const queryWords = getWords(query);
+
+    if (!normalizedQuery || !queryWords.length) {
+      return 0;
+    }
+
+
+    /* Exact title */
+
+    if (normalizedTitle === normalizedQuery) {
+      return 10000;
+    }
+
+
+    /* Exact title ignoring spaces/hyphens */
+
+    if (normalizedTitle.includes(normalizedQuery)) {
+      return 9000;
+    }
+
+
+    let score = 0;
+
+
+    /*
+      Match every search word against the
+      best word in the movie title.
+    */
+
+    for (const queryWord of queryWords) {
+      let bestWordScore = 0;
+
+      for (const titleWord of titleWords) {
+        const similarity = wordSimilarity(
+          queryWord,
+          titleWord
+        );
+
+        if (similarity >= 0.95) {
+          bestWordScore = Math.max(
+            bestWordScore,
+            2500
+          );
+        } else if (similarity >= 0.80) {
+          bestWordScore = Math.max(
+            bestWordScore,
+            1800 * similarity
+          );
+        } else if (similarity >= 0.65) {
+          bestWordScore = Math.max(
+            bestWordScore,
+            1000 * similarity
+          );
+        }
+      }
+
+      score += bestWordScore;
+    }
+
+
+    /*
+      Bonus if ALL search words are represented.
+    */
+
+    const allWordsMatch = queryWords.every(queryWord =>
+      titleWords.some(titleWord =>
+        wordSimilarity(queryWord, titleWord) >= 0.65
+      )
+    );
+
+    if (allWordsMatch) {
+      score += 3000;
+    }
+
+
+    /*
+      Bonus for the search appearing in the
+      title in the same order.
+    */
+
+    const titleWithoutSpaces = normalize(title);
+    const queryWithoutSpaces = normalize(query);
+
+    if (titleWithoutSpaces.includes(queryWithoutSpaces)) {
+      score += 4000;
+    }
+
+
+    /*
+      Check whether the beginning of a title word
+      matches the search.
+
+      "amaz" -> "Amazing"
+      "spid" -> "Spider"
+    */
+
+    for (const queryWord of queryWords) {
+      for (const titleWord of titleWords) {
+        if (
+          titleWord.startsWith(queryWord) &&
+          queryWord.length >= 2
+        ) {
+          score += 1200;
+        }
+      }
+    }
+
+
+    /*
+      Small typo protection.
+
+      This makes:
+
+      spidermn
+
+      still find:
+
+      Spider-Man
+    */
+
+    if (queryWords.length === 1) {
+      const queryWord = queryWords[0];
+
+      for (const titleWord of titleWords) {
+        const distance = levenshtein(
+          queryWord,
+          titleWord
+        );
+
+        const allowedDistance =
+          queryWord.length <= 4 ? 1 :
+          queryWord.length <= 7 ? 2 :
+          3;
+
+        if (distance <= allowedDistance) {
+          score += 1500;
+        }
+      }
+    }
+
+
+    return score;
+  }
+
+
   function updateResults() {
-    const searchTerm = input.value.trim().toLowerCase();
+    const searchTerm = input.value.trim();
 
-    function normalize(text) {
-  return text
-    .toLowerCase()
-    .replace(/[^a-z0-9]/g, "");
-}
+    let results;
 
-function levenshtein(a, b) {
-  const matrix = Array.from(
-    { length: b.length + 1 },
-    () => Array(a.length + 1).fill(0)
-  );
 
-  for (let i = 0; i <= b.length; i++) matrix[i][0] = i;
-  for (let j = 0; j <= a.length; j++) matrix[0][j] = j;
+    /*
+      No search = show everything.
+    */
 
-  for (let i = 1; i <= b.length; i++) {
-    for (let j = 1; j <= a.length; j++) {
-      const cost = b[i - 1] === a[j - 1] ? 0 : 1;
+    if (!searchTerm) {
+      results = moviesToShow;
+    } else {
 
-      matrix[i][j] = Math.min(
-        matrix[i - 1][j] + 1,
-        matrix[i][j - 1] + 1,
-        matrix[i - 1][j - 1] + cost
-      );
-    }
-  }
+      results = moviesToShow
+        .map(movie => ({
+          movie,
+          score: searchScore(movie, searchTerm)
+        }))
 
-  return matrix[b.length][a.length];
-}
+        /*
+          Ignore extremely weak matches.
+        */
 
-function searchScore(title, query) {
-  const normalizedTitle = normalize(title);
-  const normalizedQuery = normalize(query);
+        .filter(item => item.score >= 700)
 
-  if (!normalizedQuery) return 0;
+        /*
+          Best matches first.
+        */
 
-  // Perfect match
-  if (normalizedTitle === normalizedQuery) {
-    return 1000;
-  }
+        .sort((a, b) => {
+          if (b.score !== a.score) {
+            return b.score - a.score;
+          }
 
-  // Normal substring match
-  if (normalizedTitle.includes(normalizedQuery)) {
-    return 900;
-  }
+          /*
+            If two results are similarly relevant,
+            higher-rated movies appear first.
+          */
 
-  // Word-by-word matching
-  const words = title.toLowerCase().split(/[\s:.-]+/);
+          return Number(b.movie.rating) - Number(a.movie.rating);
+        })
 
-  let bestWordScore = 0;
-
-  for (const word of words) {
-    const normalizedWord = normalize(word);
-
-    if (!normalizedWord) continue;
-
-    if (normalizedWord.includes(normalizedQuery)) {
-      bestWordScore = Math.max(bestWordScore, 800);
-      continue;
+        .map(item => item.movie);
     }
 
-    const distance = levenshtein(normalizedQuery, normalizedWord);
-
-    // Allow small typos
-    const maxDistance =
-      normalizedQuery.length <= 4 ? 1 :
-      normalizedQuery.length <= 7 ? 2 :
-      3;
-
-    if (distance <= maxDistance) {
-      const similarity =
-        1 - distance / Math.max(normalizedQuery.length, normalizedWord.length);
-
-      bestWordScore = Math.max(
-        bestWordScore,
-        700 + similarity * 100
-      );
-    }
-  }
-
-  // Fuzzy match against the entire title
-  const distance = levenshtein(
-    normalizedQuery,
-    normalizedTitle
-  );
-
-  const similarity =
-    1 - distance / Math.max(
-      normalizedQuery.length,
-      normalizedTitle.length
-    );
-
-  if (similarity >= 0.55) {
-    bestWordScore = Math.max(
-      bestWordScore,
-      similarity * 600
-    );
-  }
-
-  return bestWordScore;
-}
-
-function updateResults() {
-  const searchTerm = input.value.trim();
-
-  if (!searchTerm) {
-    results = moviesToShow;
-  } else {
-    results = moviesToShow
-      .map(movie => ({
-        movie,
-        score: searchScore(movie.title, searchTerm)
-      }))
-      .filter(item => item.score > 0)
-      .sort((a, b) => b.score - a.score)
-      .map(item => item.movie);
-  }
-
-  count.textContent =
-    `${results.length} result${results.length === 1 ? "" : "s"}` +
-    `${searchTerm ? ` for "${searchTerm}"` : ""}`;
-
-  grid.innerHTML = results.length
-    ? results.map(movieCard).join("")
-    : `<div class="empty-state">No movies found. Try another search.</div>`;
-}
 
     count.textContent =
       `${results.length} result${results.length === 1 ? "" : "s"}` +
-      `${searchTerm ? ` for "${input.value.trim()}"` : ""}`;
+      `${searchTerm ? ` for "${searchTerm}"` : ""}`;
+
 
     grid.innerHTML = results.length
       ? results.map(movieCard).join("")
       : `<div class="empty-state">No movies found. Try another search.</div>`;
   }
 
+
+  /*
+    Live search while typing.
+  */
+
   input.addEventListener("input", updateResults);
+
+
+  /*
+    Search form submission.
+  */
 
   if (form) {
     form.addEventListener("submit", event => {
@@ -332,17 +537,39 @@ function updateResults() {
     });
   }
 
+
+  /*
+    Clear button.
+  */
+
   if (clearButton) {
     clearButton.addEventListener("click", () => {
       input.value = "";
-      window.history.replaceState({}, "", "search.html");
+
+      window.history.replaceState(
+        {},
+        "",
+        "search.html"
+      );
+
       updateResults();
+
       input.focus();
     });
   }
 
+
+  /*
+    Initial results.
+  */
+
   updateResults();
 }
+
+
+/* =========================================================
+   PLAYER
+   ========================================================= */
 
 function renderPlayer() {
   const stack = document.querySelector("#player-stack");
@@ -398,11 +625,17 @@ function renderPlayer() {
 
   function selectServer(server) {
     document.querySelectorAll(".server-frame").forEach(frame => {
-      frame.classList.toggle("active", frame.dataset.server === server);
+      frame.classList.toggle(
+        "active",
+        frame.dataset.server === server
+      );
     });
 
     document.querySelectorAll(".server-button").forEach(button => {
-      button.classList.toggle("active", button.dataset.server === server);
+      button.classList.toggle(
+        "active",
+        button.dataset.server === server
+      );
     });
 
     fallback.classList.toggle(
@@ -425,6 +658,11 @@ function renderPlayer() {
     fallback.classList.add("visible");
   }
 }
+
+
+/* =========================================================
+   START APP
+   ========================================================= */
 
 renderHome();
 renderSearch();
