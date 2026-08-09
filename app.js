@@ -548,7 +548,7 @@ Spark:
 
 (showId,season,episode)=>
 
-`https://player.videasy.to/tv/${showId}/${season}/${episode}`,
+`https://player.videasy.to/tv/${showId}/${season}/${episode}?color=8B5CF6&nextEpisode=true&episodeSelector=true&autoplayNextEpisode=true`,
 
 
 
@@ -557,7 +557,7 @@ Haze:
 
 (showId,season,episode)=>
 
-`https://primesrc.me/embed/tv/${showId}?s=${season}&e=${episode}`,
+`https://primesrc.me/embed/tv?tmdb=${showId}&season=${season}&episode=${episode}`,
 
 
 
@@ -602,7 +602,7 @@ Blaze:
 
 (showId,season,episode)=>
 
-`https://vidup.to/tv/${showId}/${season}/${episode}`,
+`https://vidup.to/tv/${showId}/${season}/${episode}?autoPlay=true`,
 
 
 
@@ -611,7 +611,7 @@ Forge:
 
 (showId,season,episode)=>
 
-`https://player.zxcstream.xyz/player/tv/${showId}/${season}/${episode}`,
+`https://zxcstream.xyz/player/tv/${showId}/${season}/${episode}`,
 
 
 
@@ -629,7 +629,7 @@ Beam:
 
 (showId,season,episode)=>
 
-`https://vidcore.net/tv/${showId}/${season}/${episode}`
+`https://vidcore.net/tv/${showId}/${season}/${episode}?autoPlay=true`
 
 
 };
