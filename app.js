@@ -34,7 +34,8 @@ const servers = [
   iframeSources["spider-man"].Lumen = "A_DIFFERENT_PERMITTED_EMBED_URL";
 */
 const iframeSources = {
-  "spider-man": {Lumen: "https://cinesrc.st/embed/movie/557", Helix: "https://vidzen.fun/movie/557", Quasar: "https://airflix1.com/embed/movie/557",  Spark: "https://player.videasy.to/movie/557", Haze: "https://primesrc.me/embed/movie?tmdb=557", Nyx: "https://vidfast.vc/movie/557", Gale: "https://vaplayer.ru/embed/movie/557", Nova: "https://peachify.top/embed/movie/557", Nebula: "https://play.xpass.top/e/movie/557", Blaze: "https://vidup.to/movie/557", Forge: "https://player.zxcstream.xyz/player/movie/557", Raze: "https://vsembed.ru/embed/movie/557",  Beam: "https://vidcore.net/movie/557"}
+  "spider-man": {Lumen: "https://cinesrc.st/embed/movie/557", Helix: "https://vidzen.fun/movie/557", Quasar: "https://airflix1.com/embed/movie/557",  Spark: "https://player.videasy.to/movie/557", Haze: "https://primesrc.me/embed/movie?tmdb=557", Nyx: "https://vidfast.vc/movie/557", Gale: "https://vaplayer.ru/embed/movie/557", Nova: "https://peachify.top/embed/movie/557", Nebula: "https://play.xpass.top/e/movie/557", Blaze: "https://vidup.to/movie/557", Forge: "https://player.zxcstream.xyz/player/movie/557", Raze: "https://vsembed.ru/embed/movie/557",  Beam: "https://vidcore.net/movie/557"},
+  "spider-man-2": {Lumen: "https://cinesrc.st/embed/movie/558", Helix: "https://vidzen.fun/movie/558", Quasar: "https://airflix1.com/embed/movie/558",  Spark: "https://player.videasy.to/movie/558", Haze: "https://primesrc.me/embed/movie?tmdb=558", Nyx: "https://vidfast.vc/movie/558", Gale: "https://vaplayer.ru/embed/movie/558", Nova: "https://peachify.top/embed/movie/558", Nebula: "https://play.xpass.top/e/movie/558", Blaze: "https://vidup.to/movie/558", Forge: "https://player.zxcstream.xyz/player/movie/558", Raze: "https://vsembed.ru/embed/movie/558",  Beam: "https://vidcore.net/movie/558"},
 };
 
 function escapeHtml(value) {
