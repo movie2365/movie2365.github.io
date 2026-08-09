@@ -22,8 +22,8 @@ const movies = [
 ];
 
 const servers = [
-  "Lumen", "Helix", "Quasar",
-  "Spark", "Haze", "Nyx", "Gale", "Nova", "Nebula",
+  "Helix", "Lumen", "Quasar", "Spark", 
+  "Haze", "Nyx", "Gale", "Nova", "Nebula",
   "Blaze", "Forge", "Raze", "Beam"
 ];
 
