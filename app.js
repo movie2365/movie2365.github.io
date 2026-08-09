@@ -967,7 +967,7 @@ ${show.year} · ${show.tag}
 }
 
 // =======================
-// SEARCH SYSTEM
+// SEARCH PAGE
 // =======================
 
 function renderSearch(){
@@ -975,11 +975,14 @@ function renderSearch(){
 
 const searchInput = document.querySelector("#search-input");
 
-const searchResults = document.querySelector("#search-results");
+const resultsGrid = document.querySelector("#results-grid");
+
+const resultCount = document.querySelector("#result-count");
+
+const clearButton = document.querySelector("#clear-search");
 
 
-
-if(!searchInput || !searchResults){
+if(!searchInput || !resultsGrid){
 
 return;
 
@@ -997,71 +1000,29 @@ const query = searchInput.value
 
 
 
-if(query === ""){
 
-
-searchResults.innerHTML = allContent
-
-.map(content =>
-
-content.tag === "TV SHOW"
-
-? showCard(content)
-
-: movieCard(content)
-
-)
-
-.join("");
-
-
-return;
-
-
-}
+let results = allContent;
 
 
 
 
-const results = allContent.filter(content =>
+if(query){
 
+results = allContent.filter(content =>
 
 content.title
-
 .toLowerCase()
-
 .includes(query)
-
 
 );
 
-
-
-
-
-if(results.length === 0){
-
-
-searchResults.innerHTML = `
-
-<h2 class="no-results">
-
-No results found
-
-</h2>
-
-`;
-
-
-return;
-
-
 }
 
 
 
 
-searchResults.innerHTML = results
+
+resultsGrid.innerHTML = results
 
 .map(content =>
 
@@ -1083,8 +1044,19 @@ movieCard(content)
 
 
 
+
+
+if(resultCount){
+
+resultCount.textContent =
+
+`${results.length} results`;
+
 }
 
+
+
+}
 
 
 
@@ -1096,6 +1068,30 @@ searchInput.addEventListener(
 updateSearch
 
 );
+
+
+
+
+
+if(clearButton){
+
+clearButton.addEventListener(
+
+"click",
+
+()=>{
+
+
+searchInput.value = "";
+
+updateSearch();
+
+
+}
+
+);
+
+}
 
 
 
