@@ -92,7 +92,6 @@ const movieIds = {
   "spider-man": "557",
   "spider-man-2": "558",
   "spider-man-3": "559",
-
   "my-dearest-senorita": "1239198",
   "scream-7": "1159559",
   "swapped": "1007757",
@@ -520,3 +519,330 @@ function renderSearch() {
   updateResults();
 
 }
+
+// =======================
+// PLAYER
+// =======================
+
+function renderPlayer() {
+
+  const stack =
+    document.querySelector("#player-stack");
+
+  const buttons =
+    document.querySelector("#server-buttons");
+
+  const info =
+    document.querySelector("#movie-info");
+
+  const fallback =
+    document.querySelector("#player-fallback");
+
+
+  if (!stack || !buttons || !info || !fallback) {
+    return;
+  }
+
+
+
+  const params =
+    new URLSearchParams(
+      window.location.search
+    );
+
+
+
+  const id =
+    params.get("id");
+
+
+
+  const season =
+    params.get("season");
+
+
+
+  const episode =
+    params.get("episode");
+
+
+
+  const movie =
+    movies.find(
+      item => item.id === id
+    );
+
+
+
+  const show =
+    shows.find(
+      item => item.id === id
+    );
+
+
+
+  let title;
+  let year;
+  let tag;
+  let rating;
+  let sources;
+
+
+
+  // =======================
+  // MOVIE PLAYER
+  // =======================
+
+  if (movie) {
+
+
+    title = movie.title;
+    year = movie.year;
+    tag = movie.tag;
+    rating = movie.rating;
+
+
+    sources =
+      iframeSources[movie.id] || {};
+
+  }
+
+
+
+  // =======================
+  // SHOW EPISODE PLAYER
+  // =======================
+
+  else if (show) {
+
+
+    const episodeName =
+      show.seasons[season]?.[episode - 1]
+      || "Episode";
+
+
+
+    title =
+      `${show.title} - Season ${season} Episode ${episode}: ${episodeName}`;
+
+
+    year = show.year;
+    tag = show.tag;
+    rating = show.rating;
+
+
+
+    /*
+      Episode servers go here later.
+
+      Example:
+
+      episodeSources[
+        show.id
+      ][season][episode]
+
+    */
+
+
+    sources = {};
+
+  }
+
+
+
+  else {
+
+
+    info.innerHTML = `
+      <h1>
+        Content not found
+      </h1>
+    `;
+
+
+    return;
+
+  }
+
+
+
+
+
+  info.innerHTML = `
+
+    <div>
+
+      <h1>
+        ${escapeHtml(title)}
+      </h1>
+
+
+      <p>
+        ${year}
+        ·
+        ${tag}
+        ·
+        ★ ${escapeHtml(rating)}
+      </p>
+
+    </div>
+
+
+    <a
+      class="back-link"
+      href="search.html"
+    >
+      ← Back to browse
+    </a>
+
+  `;
+
+
+
+
+
+  const availableServers =
+    servers.filter(server =>
+      Object.hasOwn(
+        sources,
+        server
+      )
+    );
+
+
+
+
+  stack.innerHTML =
+    availableServers.map(
+      (server,index)=>`
+
+      <iframe
+        class="server-frame${index===0 ? " active":""}"
+        title="${escapeHtml(server)} player"
+        data-server="${escapeHtml(server)}"
+        src="${escapeHtml(sources[server] || "")}"
+        allowfullscreen
+      ></iframe>
+
+    `
+    ).join("");
+
+
+
+
+
+  buttons.innerHTML =
+    availableServers.map(
+      (server,index)=>`
+
+      <button
+        class="server-button${index===0 ? " active":""}"
+        type="button"
+        data-server="${escapeHtml(server)}"
+      >
+
+        ${escapeHtml(server)}
+
+      </button>
+
+    `
+    ).join("");
+
+
+
+
+
+
+  function selectServer(server) {
+
+
+    document
+    .querySelectorAll(".server-frame")
+    .forEach(frame=>{
+
+
+      frame.classList.toggle(
+        "active",
+        frame.dataset.server === server
+      );
+
+
+    });
+
+
+
+
+    document
+    .querySelectorAll(".server-button")
+    .forEach(button=>{
+
+
+      button.classList.toggle(
+        "active",
+        button.dataset.server === server
+      );
+
+
+    });
+
+
+
+    fallback.classList.toggle(
+      "visible",
+      !(sources[server] || "")
+    );
+
+
+  }
+
+
+
+
+
+  buttons.addEventListener(
+    "click",
+    event=>{
+
+
+      const button =
+        event.target.closest(
+          ".server-button"
+        );
+
+
+      if(button){
+
+        selectServer(
+          button.dataset.server
+        );
+
+      }
+
+    }
+  );
+
+
+
+
+
+  if(availableServers.length){
+
+    selectServer(
+      availableServers[0]
+    );
+
+  }
+  else{
+
+    fallback.classList.add(
+      "visible"
+    );
+
+  }
+
+}
+
+renderHome();
+renderSearch();
+renderShowPage();
+renderPlayer();
