@@ -59,8 +59,8 @@ const movieIds = {
 };
 
 const serverUrlPatterns = {
-  Lumen: id => `https://cinesrc.st/embed/movie/${id}`,
   Helix: id => `https://vidzen.fun/movie/${id}`,
+  Lumen: id => `https://cinesrc.st/embed/movie/${id}`,
   Quasar: id => `https://airflix1.com/embed/movie/${id}`,
   Spark: id => `https://player.videasy.to/movie/${id}`,
   Haze: id => `https://primesrc.me/embed/movie?tmdb=${id}`,
