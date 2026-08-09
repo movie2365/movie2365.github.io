@@ -192,7 +192,44 @@ episode:6
 title:"Art Teacher",
 season:1,
 episode:7
-}
+},
+
+{
+title:"Work Family",
+season:1,
+episode:8
+},
+
+{
+title:"Step Class",
+season:1,
+episode:9
+},
+
+{
+title:"Open House",
+season:1,
+episode:10
+},
+
+{
+title:"Desking",
+season:1,
+episode:11
+},
+
+{
+title:"Ava vs. Superintendent",
+season:1,
+episode:12
+},
+
+{
+title:"Zoo Balloon",
+season:1,
+episode:13
+},
+  
 
 ],
 
@@ -215,7 +252,121 @@ episode:2
 title:"Story Samurai",
 season:2,
 episode:3
-}
+},
+
+{
+title:"The Principal's Office",
+season:2,
+episode:4
+},
+
+{
+title:"Juice",
+season:2,
+episode:5
+},
+
+{
+title:"Candy Zombies",
+season:2,
+episode:6
+},
+
+{
+title:"Attack Ad",
+season:2,
+episode:7
+},
+
+{
+title:"Egg Drop",
+season:2,
+episode:8
+},
+
+{
+title:"Sick Day",
+season:2,
+episode:9
+},
+
+{
+title:"Holiday Hookah",
+season:2,
+episode:10
+},
+
+{
+title:"Read-a-Thon",
+season:2,
+episode:11
+},
+
+{
+title:"Fight",
+season:2,
+episode:12
+},
+
+{
+title:"Fundraiser",
+season:2,
+episode:13
+},
+
+{
+title:"Valentine's Day",
+season:2,
+episode:14
+},
+
+{
+title:"Fire",
+season:2,
+episode:15
+},
+
+{
+title:"Teacher Conference",
+season:2,
+episode:16
+},
+
+{
+title:"Mural Arts",
+season:2,
+episode:17
+},
+
+{
+title:"Teacher Appreciation",
+season:2,
+episode:18
+},
+
+{
+title:"Festival",
+season:2,
+episode:19
+},
+
+{
+title:"Educator of the Year",
+season:2,
+episode:20
+},
+
+{
+title:"Mom",
+season:2,
+episode:21
+},
+
+{
+title:"Franklin Institute",
+season:2,
+episode:22
+},
 
 ],
 
@@ -223,22 +374,354 @@ episode:3
 3:[
 
 {
-title:"Career Day",
+title:"Career Day (1) / Career Day (2)",
 season:3,
 episode:1
 },
 
 {
-title:"Gregory's Garden",
+title:"Gregory's Garden Goofballs",
 season:3,
 episode:2
 },
 
 {
-title:"Alex",
+title:"Smoking",
 season:3,
 episode:3
+},
+
+{
+title:"Breakup",
+season:3,
+episode:4
+},
+
+{
+title:"Willard R. Abbott",
+season:3,
+episode:5
+},
+
+{
+title:"Librarian",
+season:3,
+episode:6
+},
+
+{
+title:"Panel",
+season:3,
+episode:7
+},
+
+{
+title:"Alex",
+season:3,
+episode:8
+},
+
+{
+title:"2 Ava 2 Fest",
+season:3,
+episode:9
+},
+
+{
+title:"Double Date",
+season:3,
+episode:10
+},
+
+{
+title:"Mother's Day",
+season:3,
+episode:11
+},
+
+{
+title:"Smith Playground",
+season:3,
+episode:12
+},
+
+{
+title:"Party",
+season:3,
+episode:13
+},
+
+],
+
+4:[
+
+{
+title:"Back to School",
+season:4,
+episode:1
+},
+
+{
+title:"Ringworm",
+season:4,
+episode:2
+},
+
+{
+title:"Class Pet",
+season:4,
+episode:3
+},
+
+{
+title:"Costume Contest",
+season:4,
+episode:4
+},
+
+{
+title:"Dad Fight",
+season:4,
+episode:5
+},
+
+{
+title:"The Deli",
+season:4,
+episode:6
+},
+
+{
+title:"Winter Show",
+season:4,
+episode:7
 }
+
+{
+title:"Winter Break",
+season:4,
+episode:8
+},
+
+{
+title:"Volunteers",
+season:4,
+episode:9
+},
+
+{
+title:"Testing",
+season:4,
+episode:10
+},
+
+{
+title:"Strike",
+season:4,
+episode:11
+},
+
+{
+title:"Girard Creek",
+season:4,
+episode:12
+},
+
+{
+title:"The Science Fair",
+season:4,
+episode:13
+},
+
+{
+title:"District Budget Meeting",
+season:4,
+episode:14
+},
+
+{
+title:"100th Day of School",
+season:4,
+episode:15
+},
+
+{
+title:"Books",
+season:4,
+episode:16
+},
+
+{
+title:"Karaoke",
+season:4,
+episode:17
+},
+
+{
+title:"Audit",
+season:4,
+episode:18
+},
+
+{
+title:"Music Class",
+season:4,
+episode:19
+},
+
+{
+title:"Ava Fest: Tokyo Drift",
+season:4,
+episode:20
+},
+
+{
+title:"Rally",
+season:4,
+episode:21
+},
+
+{
+title:"Please Touch Museum",
+season:4,
+episode:22
+},
+
+],
+
+5:[
+
+{
+title:"Team Building",
+season:5,
+episode:1
+},
+
+{
+title:"Cheating",
+season:5,
+episode:2
+},
+
+{
+title:"Ballgame",
+season:5,
+episode:3
+},
+
+{
+title:"Game Night",
+season:5,
+episode:4
+},
+
+{
+title:"Camping",
+season:5,
+episode:5
+},
+
+{
+title:"No Phones",
+season:5,
+episode:6
+},
+
+{
+title:"Goofgirl",
+season:5,
+episode:7
+},
+
+{
+title:"Birthday",
+season:5,
+episode:8
+},
+
+{
+title:"Mall (1)",
+season:5,
+episode:9
+},
+
+{
+title:"Mall (2): Questions & Concerns",
+season:5,
+episode:10
+},
+
+{
+title:"Mall (3): Heroes",
+season:5,
+episode:11
+},
+
+{
+title:"Picture Day",
+season:5,
+episode:12
+},
+
+{
+title:"Candygrams",
+season:5,
+episode:13
+},
+
+{
+title:"Aide",
+season:5,
+episode:14
+},
+
+{
+title:"Safety Day",
+season:5,
+episode:15
+},
+
+{
+title:"Campaign",
+season:5,
+episode:16
+},
+
+{
+title:"No Homework",
+season:5,
+episode:17
+},
+
+{
+title:"April Fools",
+season:5,
+episode:18
+},
+
+{
+title:"Trip",
+season:5,
+episode:19
+},
+
+{
+title:"Night Out",
+season:5,
+episode:20
+},
+
+{
+title:"Ava & Fest",
+season:5,
+episode:21
+},
+
+{
+title:"Miami",
+season:5,
+episode:22
+},
 
 ]
 
@@ -332,22 +815,107 @@ const tvShowIds = {
         4:true,
         5:true,
         6:true,
-        7:true
+        7:true,
+        8:true,
+        9:true,
+        10:true,
+        11:true,
+        12:true,
+        13:true,
       },
 
 
       2:{
         1:true,
         2:true,
-        3:true
+        3:true,
+        4:true,
+        5:true,
+        6:true,
+        7:true,
+        8:true,
+        9:true,
+        10:true,
+        11:true,
+        12:true,
+        13:true,
+        14:true,
+        15:true,
+        16:true,
+        17:true,
+        18:true,
+        19:true,
+        20:true,
+        21:true,
+        22:true,
       },
 
 
       3:{
         1:true,
         2:true,
-        3:true
-      }
+        3:true,
+        4:true,
+        5:true,
+        6:true,
+        7:true,
+        8:true,
+        9:true,
+        0:true,
+        11:true,
+        12:true,
+        13:true,
+      },
+
+      4:{
+        1:true,
+        2:true,
+        3:true,
+        4:true,
+        5:true,
+        6:true,
+        7:true,
+        8:true,
+        9:true,
+        10:true,
+        11:true,
+        12:true,
+        13:true,
+        14:true,
+        15:true,
+        16:true,
+        17:true,
+        18:true,
+        19:true,
+        20:true,
+        21:true,
+        22:true,
+      },
+
+      5:{
+        1:true,
+        2:true,
+        3:true,
+        4:true,
+        5:true,
+        6:true,
+        7:true,
+        8:true,
+        9:true,
+        10:true,
+        11:true,
+        12:true,
+        13:true,
+        14:true,
+        15:true,
+        16:true,
+        17:true,
+        18:true,
+        19:true,
+        20:true,
+        21:true,
+        22:true,
+      },
 
     }
 
