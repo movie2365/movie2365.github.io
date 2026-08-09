@@ -495,7 +495,7 @@ episode:6
 title:"Winter Show",
 season:4,
 episode:7
-}
+},
 
 {
 title:"Winter Break",
@@ -861,7 +861,7 @@ const tvShowIds = {
         7:true,
         8:true,
         9:true,
-        0:true,
+        10:true,
         11:true,
         12:true,
         13:true,
