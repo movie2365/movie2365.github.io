@@ -142,7 +142,7 @@ year:2021,
 
 rating:"8.2",
 
-poster:"assets/shows/abbott-elementary.png",
+poster:"https://cineby.ws/images/posters/series/abbott-elementary-2021.webp",
 
 tag:"TV SHOW",
 
