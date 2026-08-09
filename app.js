@@ -335,6 +335,129 @@ function renderHome() {
     .join("");
 }
 
+// =======================
+// SHOW PAGE
+// =======================
+
+function renderShowPage() {
+
+  const container = document.querySelector("#show-page");
+
+  if (!container) return;
+
+
+  const params = new URLSearchParams(
+    window.location.search
+  );
+
+
+  const id = params.get("id");
+
+
+  const show = shows.find(
+    item => item.id === id
+  );
+
+
+  if (!show) {
+
+    container.innerHTML = `
+      <h1>
+        Show not found
+      </h1>
+    `;
+
+    return;
+  }
+
+
+
+  container.innerHTML = `
+
+    <div class="show-header">
+
+      <img 
+        class="show-poster"
+        src="${escapeHtml(show.poster)}"
+        alt="${escapeHtml(show.title)} poster"
+      >
+
+
+      <div class="show-info">
+
+        <h1>
+          ${escapeHtml(show.title)}
+        </h1>
+
+
+        <p>
+          ${show.year}
+          ·
+          ${show.tag}
+          ·
+          ★ ${escapeHtml(show.rating)}
+        </p>
+
+
+      </div>
+
+    </div>
+
+
+
+    <div class="episodes">
+
+
+      ${Object.entries(show.seasons).map(
+        ([season, episodes]) => `
+
+
+        <section class="season">
+
+
+          <h2>
+            Season ${season}
+          </h2>
+
+
+
+          <div class="episode-list">
+
+
+          ${episodes.map(
+            (episode,index)=>`
+
+              <a
+                class="episode-card"
+                href="player.html?id=${encodeURIComponent(show.id)}&season=${season}&episode=${index+1}"
+              >
+
+                Episode ${index+1}
+                -
+                ${escapeHtml(episode)}
+
+              </a>
+
+            `
+          ).join("")}
+
+
+          </div>
+
+
+        </section>
+
+
+        `
+      ).join("")}
+
+
+    </div>
+
+  `;
+
+}
+
 
 
 // =======================
