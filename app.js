@@ -18,7 +18,7 @@ const movies = [
   { id: "spider-man-no-way-home", title: "Spider-Man: No Way Home", year: 2021, rating: "8.2", poster: "https://cineby.ws/images/posters/movies/spider-man-no-way-home-2021.webp", tag: "MOVIE" },
   { id: "the-amazing-spider-man", title: "The Amazing Spider-Man", year: 2012, rating: "6.9", poster: "https://cineby.ws/images/posters/movies/the-amazing-spider-man-2012.webp", tag: "MOVIE" },
   { id: "the-amazing-spider-man-2", title: "The Amazing Spider-Man 2", year: 2014, rating: "6.6", poster: "https://cineby.ws/images/posters/movies/the-amazing-spider-man-2-2014.webp", tag: "MOVIE" },
-  { id: "spider-man-brand-new-day", title: "Spider-Man: Brand New Day", year: 2026, rating: "None", poster: "https://cineby.ws/images/posters/movies/spider-man-brand-new-day-2026.webp", tag: "MOVIE" }
+  { id: "spider-man-brand-new-day", title: "Spider-Man: Brand New Day", year: 2026, rating: "7.9", poster: "https://cineby.ws/images/posters/movies/spider-man-brand-new-day-2026.webp", tag: "MOVIE" }
 ];
 
 const servers = [
