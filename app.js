@@ -304,98 +304,54 @@ const movieIds = {
 //
 
 
+// =======================
+// TV SHOW IDS
+// =======================
+
 const tvShowIds = {
 
+  "abbott-elementary": {
 
-"abbott-elementary":{
-
-
-title:"Abbott Elementary",
-
-
-// IDs for each server
-
-servers:{
+    // Main ID used by most servers
+    id: "125935",
 
 
-Helix:"94997",
+    // Only add servers here if they use a different ID
+    customIds: {
 
 
-Lumen:"79744",
+    },
 
 
-// Add more different IDs here later
-// if another server needs one
+    episodes: {
+
+      1:{
+        1:true,
+        2:true,
+        3:true,
+        4:true,
+        5:true,
+        6:true,
+        7:true
+      },
 
 
-Quasar:"94997",
-
-Spark:"94997",
-
-Haze:"94997",
-
-Nyx:"94997",
-
-Gale:"94997",
-
-Nova:"94997",
-
-Nebula:"94997",
-
-Blaze:"94997",
-
-Forge:"94997",
-
-Raze:"94997",
-
-Beam:"94997"
+      2:{
+        1:true,
+        2:true,
+        3:true
+      },
 
 
-},
+      3:{
+        1:true,
+        2:true,
+        3:true
+      }
 
+    }
 
-
-// Available episodes
-
-episodes:{
-
-
-1:{
-
-1:true,
-2:true,
-3:true,
-4:true,
-5:true,
-6:true,
-7:true
-
-},
-
-
-2:{
-
-1:true,
-2:true,
-3:true
-
-},
-
-
-3:{
-
-1:true,
-2:true,
-3:true
-
-}
-
-
-}
-
-
-}
-
+  }
 
 };
 
@@ -733,7 +689,8 @@ Object.entries(tvServerPatterns)
 
 const serverShowId =
 
-showData.servers[server];
+showData.customIds[server]
+|| showData.id;
 
 
 
