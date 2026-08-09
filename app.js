@@ -1,73 +1,248 @@
-const movies = [
-  { id: "my-dearest-senorita", title: "My Dearest Señorita", year: 2026, rating: "4.0", poster: "assets/movies/my-dearest-se-orita-2026.webp", tag: "MOVIE" },
-  { id: "scream-7", title: "Scream 7", year: 2026, rating: "6.0", poster: "assets/movies/scream-7-2026.webp", tag: "MOVIE" },
-  { id: "swapped", title: "Swapped", year: 2026, rating: "8.8", poster: "assets/movies/swapped-1-2026.webp", tag: "MOVIE" },
-  { id: "send-help", title: "Send Help", year: 2026, rating: "7.1", poster: "assets/movies/send-help-2026.webp", tag: "MOVIE" },
-  { id: "outcome", title: "Outcome", year: 2026, rating: "7.0", poster: "assets/movies/outcome-2026.webp", tag: "MOVIE" },
-  { id: "the-gates", title: "The Gates", year: 2026, rating: "6.9", poster: "assets/movies/the-gates-2026.webp", tag: "MOVIE" },
-  { id: "thrash", title: "Thrash", year: 2026, rating: "6.8", poster: "assets/movies/thrash-2026.webp", tag: "MOVIE" },
-  { id: "the-devil-wears-prada-2", title: "The Devil Wears Prada 2", year: 2026, rating: "8.3", poster: "assets/movies/the-devil-wears-prada-2-2026.webp", tag: "MOVIE" },
-  { id: "michael", title: "Michael", year: 2026, rating: "7.5", poster: "assets/movies/michael-1-2026.webp", tag: "MOVIE" },
-  { id: "apex", title: "Apex", year: 2026, rating: "6.4", poster: "https://cineby.ws/images/posters/movies/apex-1-2026.webp", tag: "MOVIE" },
+// =======================
+// MOVIE DATABASE
+// =======================
 
-  { id: "spider-man", title: "Spider-Man", year: 2002, rating: "7.3", poster: "assets/movies/spider-man-2002.png", tag: "MOVIE" },
-  { id: "spider-man-far-from-home", title: "Spider-Man: Far From Home", year: 2019, rating: "7.4", poster: "https://cineby.ws/images/posters/movies/spider-man-far-from-home-2019.webp", tag: "MOVIE" },
-  { id: "spider-man-2", title: "Spider-Man 2", year: 2004, rating: "7.5", poster: "assets/movies/spider-man-2-2004.png", tag: "MOVIE" },
-  { id: "into-the-spider-verse", title: "Spider-Man: Into the Spider-Verse", year: 2018, rating: "8.4", poster: "https://cineby.ws/images/posters/movies/spider-man-into-the-spider-verse-2018.webp", tag: "MOVIE" },
-  { id: "across-the-spider-verse", title: "Spider-Man: Across the Spider-Verse", year: 2023, rating: "8.5", poster: "https://cineby.ws/images/posters/movies/spider-man-across-the-spider-verse-2023.webp", tag: "MOVIE" },
-  { id: "spider-man-3", title: "Spider-Man 3", year: 2007, rating: "6.3", poster: "assets/movies/spider-man-3-2007.webp", tag: "MOVIE" },
-  { id: "spider-man-no-way-home", title: "Spider-Man: No Way Home", year: 2021, rating: "8.2", poster: "https://cineby.ws/images/posters/movies/spider-man-no-way-home-2021.webp", tag: "MOVIE" },
-  { id: "the-amazing-spider-man", title: "The Amazing Spider-Man", year: 2012, rating: "6.9", poster: "https://cineby.ws/images/posters/movies/the-amazing-spider-man-2012.webp", tag: "MOVIE" },
-  { id: "the-amazing-spider-man-2", title: "The Amazing Spider-Man 2", year: 2014, rating: "6.6", poster: "https://cineby.ws/images/posters/movies/the-amazing-spider-man-2-2014.webp", tag: "MOVIE" },
-  { id: "spider-man-brand-new-day", title: "Spider-Man: Brand New Day", year: 2026, rating: "7.9", poster: "https://cineby.ws/images/posters/movies/spider-man-brand-new-day-2026.webp", tag: "MOVIE" }
+const movies = [
+
+  { 
+    id: "my-dearest-senorita",
+    title: "My Dearest Señorita",
+    year: 2026,
+    rating: "4.0",
+    poster: "assets/movies/my-dearest-se-orita-2026.webp",
+    tag: "MOVIE"
+  },
+
+  { 
+    id: "scream-7",
+    title: "Scream 7",
+    year: 2026,
+    rating: "6.0",
+    poster: "assets/movies/scream-7-2026.webp",
+    tag: "MOVIE"
+  },
+
+  { 
+    id: "swapped",
+    title: "Swapped",
+    year: 2026,
+    rating: "8.8",
+    poster: "assets/movies/swapped-1-2026.webp",
+    tag: "MOVIE"
+  },
+
+  { 
+    id: "send-help",
+    title: "Send Help",
+    year: 2026,
+    rating: "7.1",
+    poster: "assets/movies/send-help-2026.webp",
+    tag: "MOVIE"
+  },
+
+  { 
+    id: "outcome",
+    title: "Outcome",
+    year: 2026,
+    rating: "7.0",
+    poster: "assets/movies/outcome-2026.webp",
+    tag: "MOVIE"
+  },
+
+  { 
+    id: "the-gates",
+    title: "The Gates",
+    year: 2026,
+    rating: "6.9",
+    poster: "assets/movies/the-gates-2026.webp",
+    tag: "MOVIE"
+  },
+
+  { 
+    id: "thrash",
+    title: "Thrash",
+    year: 2026,
+    rating: "6.8",
+    poster: "assets/movies/thrash-2026.webp",
+    tag: "MOVIE"
+  },
+
+  { 
+    id: "the-devil-wears-prada-2",
+    title: "The Devil Wears Prada 2",
+    year: 2026,
+    rating: "8.3",
+    poster: "assets/movies/the-devil-wears-prada-2-2026.webp",
+    tag: "MOVIE"
+  },
+
+  { 
+    id: "michael",
+    title: "Michael",
+    year: 2026,
+    rating: "7.5",
+    poster: "assets/movies/michael-1-2026.webp",
+    tag: "MOVIE"
+  },
+
+  { 
+    id: "apex",
+    title: "Apex",
+    year: 2026,
+    rating: "6.4",
+    poster: "https://cineby.ws/images/posters/movies/apex-1-2026.webp",
+    tag: "MOVIE"
+  },
+
+
+  {
+    id:"spider-man",
+    title:"Spider-Man",
+    year:2002,
+    rating:"7.3",
+    poster:"assets/movies/spider-man-2002.png",
+    tag:"MOVIE"
+  },
+
+  {
+    id:"spider-man-2",
+    title:"Spider-Man 2",
+    year:2004,
+    rating:"7.5",
+    poster:"assets/movies/spider-man-2-2004.png",
+    tag:"MOVIE"
+  },
+
+  {
+    id:"spider-man-3",
+    title:"Spider-Man 3",
+    year:2007,
+    rating:"6.3",
+    poster:"assets/movies/spider-man-3-2007.webp",
+    tag:"MOVIE"
+  }
+
 ];
+
 
 
 // =======================
 // TV SHOW DATABASE
 // =======================
 
+
 const shows = [
-  {
-    id: "abbott-elementary",
-    title: "Abbott Elementary",
-    year: 2021,
-    rating: "8.2",
-    poster: "assets/shows/abbott-elementary.png",
-    tag: "TV SHOW",
 
-    seasons: {
-      1: [
-        "Pilot",
-        "Light Bulb",
-        "Wishlist",
-        "New Tech",
-        "Student Transfer",
-        "Gifted Program",
-        "Art Teacher"
-      ],
+{
+  id:"abbott-elementary",
 
-      2: [
-        "Development Day",
-        "Wrong Delivery",
-        "Story Samurai"
-      ],
+  title:"Abbott Elementary",
 
-      3: [
-        "Career Day",
-        "Gregory's Garden",
-        "Alex"
-      ]
-    }
+  year:2021,
+
+  rating:"8.2",
+
+  poster:"assets/shows/abbott-elementary.png",
+
+  tag:"TV SHOW",
+
+
+  seasons:{
+
+
+    1:[
+
+      {
+        id:"abbott-elementary-1-1",
+        title:"Pilot"
+      },
+
+      {
+        id:"abbott-elementary-1-2",
+        title:"Light Bulb"
+      },
+
+      {
+        id:"abbott-elementary-1-3",
+        title:"Wishlist"
+      },
+
+      {
+        id:"abbott-elementary-1-4",
+        title:"New Tech"
+      },
+
+      {
+        id:"abbott-elementary-1-5",
+        title:"Student Transfer"
+      },
+
+      {
+        id:"abbott-elementary-1-6",
+        title:"Gifted Program"
+      },
+
+      {
+        id:"abbott-elementary-1-7",
+        title:"Art Teacher"
+      }
+
+    ],
+
+
+
+    2:[
+
+      {
+        id:"abbott-elementary-2-1",
+        title:"Development Day"
+      },
+
+      {
+        id:"abbott-elementary-2-2",
+        title:"Wrong Delivery"
+      },
+
+      {
+        id:"abbott-elementary-2-3",
+        title:"Story Samurai"
+      }
+
+    ],
+
+
+
+    3:[
+
+      {
+        id:"abbott-elementary-3-1",
+        title:"Career Day"
+      },
+
+      {
+        id:"abbott-elementary-3-2",
+        title:"Gregory's Garden"
+      },
+
+      {
+        id:"abbott-elementary-3-3",
+        title:"Alex"
+      }
+
+    ]
+
+
   }
-];
 
+};
 
 // =======================
 // SERVERS
 // =======================
 
+
 const servers = [
+
   "Helix",
   "Lumen",
   "Quasar",
@@ -81,88 +256,352 @@ const servers = [
   "Forge",
   "Raze",
   "Beam"
+
 ];
+
+
+
 
 
 // =======================
 // MOVIE IDS
 // =======================
 
+
 const movieIds = {
-  "spider-man": "557",
-  "spider-man-2": "558",
-  "spider-man-3": "559",
-  "my-dearest-senorita": "1239198",
-  "scream-7": "1159559",
-  "swapped": "1007757",
-  "send-help": "1198994",
-  "outcome": "1049471",
-  "the-gates": "1366906",
-  "thrash": "1290417",
-  "the-devil-wears-prada-2": "1314481",
-  "michael": "936075",
-  "apex": "1318447",
-  "spider-man-far-from-home": "429617",
-  "into-the-spider-verse": "324857",
-  "across-the-spider-verse": "569094",
-  "spider-man-no-way-home": "634649",
-  "the-amazing-spider-man": "1930",
-  "the-amazing-spider-man-2": "102382",
-  "spider-man-brand-new-day": "969681"
+
+
+  "spider-man":
+  "557",
+
+
+  "spider-man-2":
+  "558",
+
+
+  "spider-man-3":
+  "559",
+
+
+  "my-dearest-senorita":
+  "1239198",
+
+
+  "scream-7":
+  "1159559",
+
+
+  "swapped":
+  "1007757",
+
+
+  "send-help":
+  "1198994",
+
+
+  "outcome":
+  "1049471",
+
+
+  "the-gates":
+  "1366906",
+
+
+  "thrash":
+  "1290417",
+
+
+  "the-devil-wears-prada-2":
+  "1314481",
+
+
+  "michael":
+  "936075",
+
+
+  "apex":
+  "1318447",
+
+
+  "spider-man-far-from-home":
+  "429617",
+
+
+  "into-the-spider-verse":
+  "324857",
+
+
+  "across-the-spider-verse":
+  "569094",
+
+
+  "spider-man-no-way-home":
+  "634649",
+
+
+  "the-amazing-spider-man":
+  "1930",
+
+
+  "the-amazing-spider-man-2":
+  "102382",
+
+
+  "spider-man-brand-new-day":
+  "969681"
+
+
 };
 
+
+
+
+
+
 // =======================
-// SERVER URL PATTERNS
+// MOVIE SERVER PATTERNS
 // =======================
+
 
 const serverUrlPatterns = {
-  Helix: id => `https://vidzen.fun/movie/${id}`,
-  Lumen: id => `https://cinesrc.st/embed/movie/${id}`,
-  Quasar: id => `https://airflix1.com/embed/movie/${id}`,
-  Spark: id => `https://player.videasy.to/movie/${id}`,
-  Haze: id => `https://primesrc.me/embed/movie?tmdb=${id}`,
-  Nyx: id => `https://vidfast.vc/movie/${id}`,
-  Gale: id => `https://vaplayer.ru/embed/movie/${id}`,
-  Nova: id => `https://peachify.top/embed/movie/${id}`,
-  Nebula: id => `https://play.xpass.top/e/movie/${id}`,
-  Blaze: id => `https://vidup.to/movie/${id}`,
-  Forge: id => `https://player.zxcstream.xyz/player/movie/${id}`,
-  Raze: id => `https://vsembed.ru/embed/movie/${id}`,
-  Beam: id => `https://vidcore.net/movie/${id}`
+
+
+  Helix:
+  id => `https://vidzen.fun/movie/${id}`,
+
+
+  Lumen:
+  id => `https://cinesrc.st/embed/movie/${id}`,
+
+
+  Quasar:
+  id => `https://airflix1.com/embed/movie/${id}`,
+
+
+  Spark:
+  id => `https://player.videasy.to/movie/${id}`,
+
+
+  Haze:
+  id => `https://primesrc.me/embed/movie?tmdb=${id}`,
+
+
+  Nyx:
+  id => `https://vidfast.vc/movie/${id}`,
+
+
+  Gale:
+  id => `https://vaplayer.ru/embed/movie/${id}`,
+
+
+  Nova:
+  id => `https://peachify.top/embed/movie/${id}`,
+
+
+  Nebula:
+  id => `https://play.xpass.top/e/movie/${id}`,
+
+
+  Blaze:
+  id => `https://vidup.to/movie/${id}`,
+
+
+  Forge:
+  id => `https://player.zxcstream.xyz/player/movie/${id}`,
+
+
+  Raze:
+  id => `https://vsembed.ru/embed/movie/${id}`,
+
+
+  Beam:
+  id => `https://vidcore.net/movie/${id}`
+
+
 };
+
+
+
+
+
+
+// =======================
+// TV EPISODE SERVER PATTERNS
+// =======================
+
+
+const tvServerUrlPatterns = {
+
+
+  Helix:
+  id => `https://vidzen.fun/tv/${id}`,
+
+
+  Lumen:
+  id => `https://cinesrc.st/embed/tv/${id}`,
+
+
+  Quasar:
+  id => `https://airflix1.com/embed/tv/${id}`,
+
+
+  Spark:
+  id => `https://player.videasy.to/tv/${id}`,
+
+
+  Haze:
+  id => `https://primesrc.me/embed/tv/${id}`,
+
+
+  Nyx:
+  id => `https://vidfast.vc/tv/${id}`,
+
+
+  Gale:
+  id => `https://vaplayer.ru/embed/tv/${id}`,
+
+
+  Nova:
+  id => `https://peachify.top/embed/tv/${id}`,
+
+
+  Nebula:
+  id => `https://play.xpass.top/e/tv/${id}`,
+
+
+  Blaze:
+  id => `https://vidup.to/tv/${id}`,
+
+
+  Forge:
+  id => `https://player.zxcstream.xyz/player/tv/${id}`,
+
+
+  Raze:
+  id => `https://vsembed.ru/embed/tv/${id}`,
+
+
+  Beam:
+  id => `https://vidcore.net/tv/${id}`
+
+
+};
+
+
+
+
+
+
 
 
 // =======================
 // CREATE MOVIE SOURCES
 // =======================
 
+
 const iframeSources = Object.fromEntries(
-  Object.entries(movieIds).map(([movieId, externalId]) => [
+
+  Object.entries(movieIds)
+
+  .map(([movieId, externalId]) => [
+
     movieId,
+
+
     Object.fromEntries(
-      Object.entries(serverUrlPatterns).map(([server, makeUrl]) => [
+
+      Object.entries(serverUrlPatterns)
+
+      .map(([server,makeUrl]) => [
+
         server,
+
         makeUrl(externalId)
+
       ])
+
     )
+
+
   ])
+
 );
 
 
+
+
+
+
+
+// =======================
+// CREATE TV EPISODE SOURCES
+// =======================
+
+
+const episodeSources = {};
+
+
+
+function createEpisodeSources(show){
+
+
+  Object.values(show.seasons)
+
+  .flat()
+
+  .forEach(episode => {
+
+
+    episodeSources[episode.id] = {};
+
+
+    Object.entries(tvServerUrlPatterns)
+
+    .forEach(([server,makeUrl]) => {
+
+
+      episodeSources[episode.id][server] =
+      makeUrl(episode.id);
+
+
+    });
+
+
+  });
+
+
+}
+
+
+
+shows.forEach(show => {
+
+  createEpisodeSources(show);
+
+});
 
 // =======================
 // HTML ESCAPE
 // =======================
 
-function escapeHtml(value) {
+
+function escapeHtml(value){
+
   return String(value).replace(/[&<>"']/g, character => ({
-    "&": "&amp;",
-    "<": "&lt;",
-    ">": "&gt;",
-    "\"": "&quot;",
-    "'": "&#039;"
+
+    "&":"&amp;",
+    "<":"&lt;",
+    ">":"&gt;",
+    "\"":"&quot;",
+    "'":"&#039;"
+
   }[character]));
+
 }
+
+
+
+
 
 
 
@@ -170,26 +609,49 @@ function escapeHtml(value) {
 // POSTER SYSTEM
 // =======================
 
-function posterMarkup(content) {
 
-  if (content.poster) {
+function posterMarkup(content){
+
+
+  if(content.poster){
+
     return `
+
       <img
+
         src="${escapeHtml(content.poster)}"
+
         alt="${escapeHtml(content.title)} poster"
+
         loading="lazy"
+
       >
+
     `;
+
   }
 
 
+
   return `
+
     <div class="poster-placeholder">
+
       <span>POSTER</span>
+
       <small>Put image here</small>
+
     </div>
+
   `;
+
+
 }
+
+
+
+
+
 
 
 
@@ -197,41 +659,75 @@ function posterMarkup(content) {
 // MOVIE CARD
 // =======================
 
-function movieCard(movie) {
 
-  return `
-    <a
-      class="movie-card"
-      href="player.html?id=${encodeURIComponent(movie.id)}"
-    >
-
-      <div class="poster">
-
-        ${posterMarkup(movie)}
-
-        <div class="rating">
-          ★ ${escapeHtml(movie.rating)}
-        </div>
-
-        <div class="poster-play">
-          ▶
-        </div>
-
-      </div>
+function movieCard(movie){
 
 
-      <div class="movie-card-title">
-        ${escapeHtml(movie.title)}
-      </div>
+return `
+
+<a
+
+class="movie-card"
+
+href="player.html?id=${encodeURIComponent(movie.id)}"
+
+>
 
 
-      <div class="movie-meta">
-        ${movie.year} · ${movie.tag}
-      </div>
+<div class="poster">
 
-    </a>
-  `;
+
+${posterMarkup(movie)}
+
+
+
+<div class="rating">
+
+★ ${escapeHtml(movie.rating)}
+
+</div>
+
+
+
+<div class="poster-play">
+
+▶
+
+</div>
+
+
+</div>
+
+
+
+
+<div class="movie-card-title">
+
+${escapeHtml(movie.title)}
+
+</div>
+
+
+
+
+<div class="movie-meta">
+
+${movie.year} · ${movie.tag}
+
+</div>
+
+
+
+</a>
+
+`;
+
 }
+
+
+
+
+
 
 
 
@@ -239,41 +735,79 @@ function movieCard(movie) {
 // SHOW CARD
 // =======================
 
-function showCard(show) {
 
-  return `
-    <a
-      class="movie-card"
-      href="show.html?id=${encodeURIComponent(show.id)}"
-    >
-
-      <div class="poster">
-
-        ${posterMarkup(show)}
-
-        <div class="rating">
-          ★ ${escapeHtml(show.rating)}
-        </div>
-
-        <div class="poster-play">
-          ▶
-        </div>
-
-      </div>
+function showCard(show){
 
 
-      <div class="movie-card-title">
-        ${escapeHtml(show.title)}
-      </div>
+return `
+
+<a
+
+class="movie-card"
+
+href="show.html?id=${encodeURIComponent(show.id)}"
+
+>
 
 
-      <div class="movie-meta">
-        ${show.year} · ${show.tag}
-      </div>
 
-    </a>
-  `;
+<div class="poster">
+
+
+${posterMarkup(show)}
+
+
+
+<div class="rating">
+
+★ ${escapeHtml(show.rating)}
+
+</div>
+
+
+
+<div class="poster-play">
+
+▶
+
+</div>
+
+
+</div>
+
+
+
+
+
+<div class="movie-card-title">
+
+${escapeHtml(show.title)}
+
+</div>
+
+
+
+
+
+<div class="movie-meta">
+
+${show.year} · ${show.tag}
+
+</div>
+
+
+
+</a>
+
+`;
+
 }
+
+
+
+
+
+
 
 
 
@@ -281,201 +815,380 @@ function showCard(show) {
 // ALL CONTENT
 // =======================
 
+
 const allContent = [
+
   ...movies,
+
   ...shows
+
 ];
+
+
+
+
+
+
+
+
 
 // =======================
 // HOME PAGE
 // =======================
 
-function renderHome() {
 
-  const list = document.querySelector("#hot-list");
-
-  if (!list) return;
+function renderHome(){
 
 
-  list.innerHTML = allContent
-    .slice(0, 10)
-    .map((content, index) => `
-
-      <a
-        class="hot-row"
-        href="${
-          content.tag === "TV SHOW"
-          ? `show.html?id=${encodeURIComponent(content.id)}`
-          : `player.html?id=${encodeURIComponent(content.id)}`
-        }"
-      >
-
-        <span class="rank">
-          #${index + 1}
-        </span>
+const list =
+document.querySelector("#hot-list");
 
 
-        <span class="hot-title">
-          ${escapeHtml(content.title)}
-        </span>
+
+if(!list) return;
 
 
-        <span class="hot-type">
-          ${content.tag}
-        </span>
 
 
-        <span class="hot-rating">
-          ★ ${escapeHtml(content.rating)}
-        </span>
+list.innerHTML = allContent
 
-      </a>
+.slice(0,10)
 
-    `)
-    .join("");
+.map((content,index)=>`
+
+
+
+<a
+
+class="hot-row"
+
+href="${
+content.tag === "TV SHOW"
+
+?
+
+`show.html?id=${encodeURIComponent(content.id)}`
+
+:
+
+`player.html?id=${encodeURIComponent(content.id)}`
+
+}"
+
+>
+
+
+
+<span class="rank">
+
+#${index+1}
+
+</span>
+
+
+
+
+<span class="hot-title">
+
+${escapeHtml(content.title)}
+
+</span>
+
+
+
+
+<span class="hot-type">
+
+${content.tag}
+
+</span>
+
+
+
+
+<span class="hot-rating">
+
+★ ${escapeHtml(content.rating)}
+
+</span>
+
+
+
+</a>
+
+
+
+`)
+
+.join("");
+
 }
 
 // =======================
 // SHOW PAGE
 // =======================
 
+
 function renderShowPage(){
 
-const info = document.querySelector("#show-info");
-const episodes = document.querySelector("#episodes-list");
-const seasonSelect = document.querySelector("#season-select");
+
+const info =
+document.querySelector("#show-info");
+
+
+const episodes =
+document.querySelector("#episodes-list");
+
+
+const seasonSelect =
+document.querySelector("#season-select");
+
 
 
 if(!info || !episodes || !seasonSelect) return;
 
 
 
-const params = new URLSearchParams(
+
+
+const params =
+new URLSearchParams(
 window.location.search
 );
 
 
-const show = shows.find(
+
+
+const show =
+shows.find(
 item => item.id === params.get("id")
 );
 
 
 
+
+
 if(!show){
 
-info.innerHTML = "<h1>Show not found</h1>";
+
+info.innerHTML = `
+
+<h1>
+Show not found
+</h1>
+
+`;
+
 return;
+
 
 }
 
 
 
+
+
+
+// =======================
+// SHOW HEADER
+// =======================
+
+
 info.innerHTML = `
+
 
 <div class="show-header">
 
 
-<img 
+
+<img
+
 class="show-poster"
-src="${show.poster}"
+
+src="${escapeHtml(show.poster)}"
+
+alt="${escapeHtml(show.title)} poster"
+
 >
+
+
 
 
 <div>
 
+
 <h1>
+
 ${escapeHtml(show.title)}
+
 </h1>
 
 
+
 <p>
-${show.year} · ${show.tag} · ★ ${show.rating}
+
+${show.year}
+
+·
+
+${show.tag}
+
+·
+
+★ ${escapeHtml(show.rating)}
+
 </p>
 
 
+
 </div>
 
 
+
 </div>
+
+
 
 `;
 
 
 
 
-// seasons dropdown
+
+
+
+
+// =======================
+// SEASON SELECT
+// =======================
+
 
 seasonSelect.innerHTML =
-Object.keys(show.seasons)
-.map(season =>
 
-`
+Object.keys(show.seasons)
+
+.map(season => `
+
+
 <option value="${season}">
+
 Season ${season}
+
 </option>
 
-`
 
-)
+`)
+
 .join("");
 
 
 
+
+
+
+
+
+
+
+// =======================
+// LOAD EPISODES
+// =======================
 
 
 function loadEpisodes(season){
 
 
+
 episodes.innerHTML =
+
+
 show.seasons[season]
-.map((episode,index)=>
 
-`
+.map((episode,index)=>`
 
-<a 
+
+
+<a
+
 class="episode-card"
-href="player.html?id=${show.id}&season=${season}&episode=${index+1}"
+
+href="player.html?id=${encodeURIComponent(episode.id)}"
+
 >
 
 
+
 <div class="episode-number">
+
 ${index+1}
+
 </div>
 
 
-<div>
-${escapeHtml(episode)}
+
+
+<div class="episode-title">
+
+
+${escapeHtml(episode.title)}
+
+
 </div>
+
+
 
 
 <span>
+
 ▶
+
 </span>
+
 
 
 </a>
 
-`
 
-)
+
+`)
+
 .join("");
+
+
 
 }
 
 
+
+
+
+
+
+
+// default season
 
 loadEpisodes(1);
 
 
 
+
+
+
+// change season
+
+
 seasonSelect.addEventListener(
+
 "change",
+
 ()=>{
+
 
 loadEpisodes(
 seasonSelect.value
 );
 
+
 }
 
 );
@@ -484,514 +1197,126 @@ seasonSelect.value
 
 }
 
-
-
 // =======================
-// SEARCH
+// TV EPISODE IDS
 // =======================
 
-function renderSearch() {
+const episodeIds = {
 
-  const input = document.querySelector("#search-input");
-  const grid = document.querySelector("#results-grid");
-  const count = document.querySelector("#result-count");
-  const form = document.querySelector("#results-search");
-  const clearButton = document.querySelector("#clear-search");
+  "abbott-elementary": {
 
-
-  if (!input || !grid || !count) return;
-
-
-
-  const params = new URLSearchParams(
-    window.location.search
-  );
+    1: {
+      1: "abbott-elementary-s1-e1",
+      2: "abbott-elementary-s1-e2",
+      3: "abbott-elementary-s1-e3",
+      4: "abbott-elementary-s1-e4",
+      5: "abbott-elementary-s1-e5",
+      6: "abbott-elementary-s1-e6",
+      7: "abbott-elementary-s1-e7"
+    },
 
 
-  const query = params.get("q") || "";
-
-  const contentToShow =
-    params.get("random") === "1"
-    ? [...allContent].sort(() => Math.random() - 0.5)
-    : allContent;
-
+    2: {
+      1: "abbott-elementary-s2-e1",
+      2: "abbott-elementary-s2-e2",
+      3: "abbott-elementary-s2-e3"
+    },
 
 
-  input.value = query;
-
-
-
-  function normalize(text) {
-
-    return String(text)
-      .toLowerCase()
-      .normalize("NFD")
-      .replace(/[\u0300-\u036f]/g,"")
-      .replace(/[^a-z0-9]/g,"");
-
-  }
-
-
-
-  function updateResults() {
-
-    const searchTerm =
-      input.value.trim();
-
-
-    let results;
-
-
-
-    if (!searchTerm) {
-
-      results = contentToShow;
-
-    } else {
-
-      const search =
-        normalize(searchTerm);
-
-
-      results =
-        contentToShow.filter(content => {
-
-          const title =
-            normalize(content.title);
-
-
-          return (
-            title.includes(search) ||
-            search.includes(title)
-          );
-
-        });
-
+    3: {
+      1: "abbott-elementary-s3-e1",
+      2: "abbott-elementary-s3-e2",
+      3: "abbott-elementary-s3-e3"
     }
 
-
-
-    count.textContent =
-      `${results.length} result${results.length === 1 ? "" : "s"}` +
-      `${searchTerm ? ` for "${searchTerm}"` : ""}`;
-
-
-
-    grid.innerHTML =
-      results.length
-
-      ? results.map(content =>
-
-          content.tag === "TV SHOW"
-          ? showCard(content)
-          : movieCard(content)
-
-        ).join("")
-
-      : `
-
-        <div class="empty-state">
-          No results found.
-        </div>
-
-      `;
-
   }
 
+};
 
 
-
-  input.addEventListener(
-    "input",
-    updateResults
-  );
-
-
-
-  if (form) {
-
-    form.addEventListener(
-      "submit",
-      event => {
-
-        event.preventDefault();
-
-
-        const searchTerm =
-          input.value.trim();
-
-
-
-        window.location.href =
-          searchTerm
-
-          ? `search.html?q=${encodeURIComponent(searchTerm)}`
-
-          : "search.html";
-
-      }
-    );
-
-  }
-
-
-
-
-  if (clearButton) {
-
-    clearButton.addEventListener(
-      "click",
-      () => {
-
-        input.value = "";
-
-
-        window.history.replaceState(
-          {},
-          "",
-          "search.html"
-        );
-
-
-        updateResults();
-
-
-        input.focus();
-
-      }
-    );
-
-  }
-
-
-
-  updateResults();
-
-}
 
 // =======================
-// PLAYER
+// EPISODE SERVER LINKS
 // =======================
 
-function renderPlayer() {
+const episodeServerPatterns = {
 
-  const stack =
-    document.querySelector("#player-stack");
+  Helix: id => `https://vidzen.fun/tv/${id}`,
 
-  const buttons =
-    document.querySelector("#server-buttons");
+  Lumen: id => `https://cinesrc.st/embed/tv/${id}`,
 
-  const info =
-    document.querySelector("#movie-info");
+  Quasar: id => `https://airflix1.com/embed/tv/${id}`,
 
-  const fallback =
-    document.querySelector("#player-fallback");
+  Spark: id => `https://player.videasy.to/tv/${id}`,
 
+  Haze: id => `https://primesrc.me/embed/tv?tmdb=${id}`,
 
-  if (!stack || !buttons || !info || !fallback) {
-    return;
-  }
+  Nyx: id => `https://vidfast.vc/tv/${id}`,
 
+  Gale: id => `https://vaplayer.ru/embed/tv/${id}`,
 
+  Nova: id => `https://peachify.top/embed/tv/${id}`,
 
-  const params =
-    new URLSearchParams(
-      window.location.search
-    );
+  Nebula: id => `https://play.xpass.top/e/tv/${id}`,
 
+  Blaze: id => `https://vidup.to/tv/${id}`,
 
+  Forge: id => `https://player.zxcstream.xyz/player/tv/${id}`,
 
-  const id =
-    params.get("id");
+  Raze: id => `https://vsembed.ru/embed/tv/${id}`,
 
+  Beam: id => `https://vidcore.net/tv/${id}`
 
+};
 
-  const season =
-    params.get("season");
 
 
+// =======================
+// CREATE EPISODE SOURCES
+// =======================
 
-  const episode =
-    params.get("episode");
+const episodeSources = {};
 
 
+Object.entries(episodeIds).forEach(
+([showId, seasons]) => {
 
-  const movie =
-    movies.find(
-      item => item.id === id
-    );
 
+  episodeSources[showId] = {};
 
 
-  const show =
-    shows.find(
-      item => item.id === id
-    );
+  Object.entries(seasons).forEach(
+  ([season, episodes]) => {
 
 
+    episodeSources[showId][season] = {};
 
-  let title;
-  let year;
-  let tag;
-  let rating;
-  let sources;
 
+    Object.entries(episodes).forEach(
+    ([episode, id]) => {
 
 
-  // =======================
-  // MOVIE PLAYER
-  // =======================
+      episodeSources[showId][season][episode] = {};
 
-  if (movie) {
 
+      Object.entries(episodeServerPatterns)
+      .forEach(([server,makeUrl])=>{
 
-    title = movie.title;
-    year = movie.year;
-    tag = movie.tag;
-    rating = movie.rating;
 
+        episodeSources[showId]
+        [season]
+        [episode]
+        [server] = makeUrl(id);
 
-    sources =
-      iframeSources[movie.id] || {};
 
-  }
-
-
-
-  // =======================
-  // SHOW EPISODE PLAYER
-  // =======================
-
-  else if (show) {
-
-
-    const episodeName =
-      show.seasons[season]?.[episode - 1]
-      || "Episode";
-
-
-
-    title =
-      `${show.title} - Season ${season} Episode ${episode}: ${episodeName}`;
-
-
-    year = show.year;
-    tag = show.tag;
-    rating = show.rating;
-
-
-
-    /*
-      Episode servers go here later.
-
-      Example:
-
-      episodeSources[
-        show.id
-      ][season][episode]
-
-    */
-
-
-    sources = {};
-
-  }
-
-
-
-  else {
-
-
-    info.innerHTML = `
-      <h1>
-        Content not found
-      </h1>
-    `;
-
-
-    return;
-
-  }
-
-
-
-
-
-  info.innerHTML = `
-
-    <div>
-
-      <h1>
-        ${escapeHtml(title)}
-      </h1>
-
-
-      <p>
-        ${year}
-        ·
-        ${tag}
-        ·
-        ★ ${escapeHtml(rating)}
-      </p>
-
-    </div>
-
-
-    <a
-      class="back-link"
-      href="search.html"
-    >
-      ← Back to browse
-    </a>
-
-  `;
-
-
-
-
-
-  const availableServers =
-    servers.filter(server =>
-      Object.hasOwn(
-        sources,
-        server
-      )
-    );
-
-
-
-
-  stack.innerHTML =
-    availableServers.map(
-      (server,index)=>`
-
-      <iframe
-        class="server-frame${index===0 ? " active":""}"
-        title="${escapeHtml(server)} player"
-        data-server="${escapeHtml(server)}"
-        src="${escapeHtml(sources[server] || "")}"
-        allowfullscreen
-      ></iframe>
-
-    `
-    ).join("");
-
-
-
-
-
-  buttons.innerHTML =
-    availableServers.map(
-      (server,index)=>`
-
-      <button
-        class="server-button${index===0 ? " active":""}"
-        type="button"
-        data-server="${escapeHtml(server)}"
-      >
-
-        ${escapeHtml(server)}
-
-      </button>
-
-    `
-    ).join("");
-
-
-
-
-
-
-  function selectServer(server) {
-
-
-    document
-    .querySelectorAll(".server-frame")
-    .forEach(frame=>{
-
-
-      frame.classList.toggle(
-        "active",
-        frame.dataset.server === server
-      );
+      });
 
 
     });
 
 
+  });
 
 
-    document
-    .querySelectorAll(".server-button")
-    .forEach(button=>{
+});
 
-
-      button.classList.toggle(
-        "active",
-        button.dataset.server === server
-      );
-
-
-    });
-
-
-
-    fallback.classList.toggle(
-      "visible",
-      !(sources[server] || "")
-    );
-
-
-  }
-
-
-
-
-
-  buttons.addEventListener(
-    "click",
-    event=>{
-
-
-      const button =
-        event.target.closest(
-          ".server-button"
-        );
-
-
-      if(button){
-
-        selectServer(
-          button.dataset.server
-        );
-
-      }
-
-    }
-  );
-
-
-
-
-
-  if(availableServers.length){
-
-    selectServer(
-      availableServers[0]
-    );
-
-  }
-  else{
-
-    fallback.classList.add(
-      "visible"
-    );
-
-  }
-
-}
-
-renderHome();
-renderSearch();
-renderShowPage();
-renderPlayer();
