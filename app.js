@@ -339,122 +339,148 @@ function renderHome() {
 // SHOW PAGE
 // =======================
 
-function renderShowPage() {
+function renderShowPage(){
 
-  const container = document.querySelector("#show-page");
-
-  if (!container) return;
-
-
-  const params = new URLSearchParams(
-    window.location.search
-  );
+const info = document.querySelector("#show-info");
+const episodes = document.querySelector("#episodes-list");
+const seasonSelect = document.querySelector("#season-select");
 
 
-  const id = params.get("id");
-
-
-  const show = shows.find(
-    item => item.id === id
-  );
-
-
-  if (!show) {
-
-    container.innerHTML = `
-      <h1>
-        Show not found
-      </h1>
-    `;
-
-    return;
-  }
+if(!info || !episodes || !seasonSelect) return;
 
 
 
-  container.innerHTML = `
-
-    <div class="show-header">
-
-      <img 
-        class="show-poster"
-        src="${escapeHtml(show.poster)}"
-        alt="${escapeHtml(show.title)} poster"
-      >
+const params = new URLSearchParams(
+window.location.search
+);
 
 
-      <div class="show-info">
-
-        <h1>
-          ${escapeHtml(show.title)}
-        </h1>
-
-
-        <p>
-          ${show.year}
-          ·
-          ${show.tag}
-          ·
-          ★ ${escapeHtml(show.rating)}
-        </p>
-
-
-      </div>
-
-    </div>
+const show = shows.find(
+item => item.id === params.get("id")
+);
 
 
 
-    <div class="episodes">
+if(!show){
 
+info.innerHTML = "<h1>Show not found</h1>";
+return;
 
-      ${Object.entries(show.seasons).map(
-        ([season, episodes]) => `
-
-
-        <section class="season">
-
-
-          <h2>
-            Season ${season}
-          </h2>
+}
 
 
 
-          <div class="episode-list">
+info.innerHTML = `
+
+<div class="show-header">
 
 
-          ${episodes.map(
-            (episode,index)=>`
-
-              <a
-                class="episode-card"
-                href="player.html?id=${encodeURIComponent(show.id)}&season=${season}&episode=${index+1}"
-              >
-
-                Episode ${index+1}
-                -
-                ${escapeHtml(episode)}
-
-              </a>
-
-            `
-          ).join("")}
+<img 
+class="show-poster"
+src="${show.poster}"
+>
 
 
-          </div>
+<div>
+
+<h1>
+${escapeHtml(show.title)}
+</h1>
 
 
-        </section>
+<p>
+${show.year} · ${show.tag} · ★ ${show.rating}
+</p>
 
 
-        `
-      ).join("")}
+</div>
 
 
-    </div>
+</div>
 
-  `;
+`;
+
+
+
+
+// seasons dropdown
+
+seasonSelect.innerHTML =
+Object.keys(show.seasons)
+.map(season =>
+
+`
+<option value="${season}">
+Season ${season}
+</option>
+
+`
+
+)
+.join("");
+
+
+
+
+
+function loadEpisodes(season){
+
+
+episodes.innerHTML =
+show.seasons[season]
+.map((episode,index)=>
+
+`
+
+<a 
+class="episode-card"
+href="player.html?id=${show.id}&season=${season}&episode=${index+1}"
+>
+
+
+<div class="episode-number">
+${index+1}
+</div>
+
+
+<div>
+${escapeHtml(episode)}
+</div>
+
+
+<span>
+▶
+</span>
+
+
+</a>
+
+`
+
+)
+.join("");
+
+}
+
+
+
+loadEpisodes(1);
+
+
+
+seasonSelect.addEventListener(
+"change",
+()=>{
+
+loadEpisodes(
+seasonSelect.value
+);
+
+}
+
+);
+
+
 
 }
 
