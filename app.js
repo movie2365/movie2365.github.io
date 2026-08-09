@@ -11,6 +11,7 @@ const movies = [
   { id: "apex", title: "Apex", year: 2026, rating: "6.4", poster: "", tag: "MOVIE" },
   { id: "spider-man", title: "Spider-Man", year: 2002, rating: "7.3", poster: "assets/movies/spider-man-2002.png", tag: "MOVIE" },
   { id: "spider-man-far-from-home", title: "Spider-Man: Far From Home", year: 2019, rating: "7.4", poster: "", tag: "MOVIE" },
+  { id: "spider-man 2", title: "Spider-Man 2", year: 2004, rating: "7.5", poster: "assets/movies/spider-man-2-2004.png", tag: "MOVIE" },
   { id: "into-the-spider-verse", title: "Spider-Man: Into the Spider-Verse", year: 2018, rating: "8.4", poster: "", tag: "MOVIE" },
   { id: "across-the-spider-verse", title: "Spider-Man: Across the Spider-Verse", year: 2023, rating: "8.5", poster: "", tag: "MOVIE" },
   { id: "spider-man-3", title: "Spider-Man 3", year: 2007, rating: "6.3", poster: "", tag: "MOVIE" },
