@@ -967,6 +967,146 @@ ${show.year} · ${show.tag}
 }
 
 // =======================
+// SEARCH SYSTEM
+// =======================
+
+function renderSearch(){
+
+
+const searchInput = document.querySelector("#search-input");
+
+const searchResults = document.querySelector("#search-results");
+
+
+
+if(!searchInput || !searchResults){
+
+return;
+
+}
+
+
+
+
+function updateSearch(){
+
+
+const query = searchInput.value
+.toLowerCase()
+.trim();
+
+
+
+if(query === ""){
+
+
+searchResults.innerHTML = allContent
+
+.map(content =>
+
+content.tag === "TV SHOW"
+
+? showCard(content)
+
+: movieCard(content)
+
+)
+
+.join("");
+
+
+return;
+
+
+}
+
+
+
+
+const results = allContent.filter(content =>
+
+
+content.title
+
+.toLowerCase()
+
+.includes(query)
+
+
+);
+
+
+
+
+
+if(results.length === 0){
+
+
+searchResults.innerHTML = `
+
+<h2 class="no-results">
+
+No results found
+
+</h2>
+
+`;
+
+
+return;
+
+
+}
+
+
+
+
+searchResults.innerHTML = results
+
+.map(content =>
+
+
+content.tag === "TV SHOW"
+
+?
+
+showCard(content)
+
+:
+
+movieCard(content)
+
+
+)
+
+.join("");
+
+
+
+}
+
+
+
+
+
+searchInput.addEventListener(
+
+"input",
+
+updateSearch
+
+);
+
+
+
+
+
+updateSearch();
+
+
+}
+
+// =======================
 // ALL CONTENT
 // =======================
 
@@ -1914,6 +2054,8 @@ fallback.classList.add(
 
 
 renderHome();
+
+renderSearch();
 
 renderShowPage();
 
