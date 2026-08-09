@@ -182,10 +182,132 @@ function renderSearch() {
   function updateResults() {
     const searchTerm = input.value.trim().toLowerCase();
 
-    const results = moviesToShow.filter(movie =>
-      !searchTerm ||
-      movie.title.toLowerCase().includes(searchTerm)
+    function normalize(text) {
+  return text
+    .toLowerCase()
+    .replace(/[^a-z0-9]/g, "");
+}
+
+function levenshtein(a, b) {
+  const matrix = Array.from(
+    { length: b.length + 1 },
+    () => Array(a.length + 1).fill(0)
+  );
+
+  for (let i = 0; i <= b.length; i++) matrix[i][0] = i;
+  for (let j = 0; j <= a.length; j++) matrix[0][j] = j;
+
+  for (let i = 1; i <= b.length; i++) {
+    for (let j = 1; j <= a.length; j++) {
+      const cost = b[i - 1] === a[j - 1] ? 0 : 1;
+
+      matrix[i][j] = Math.min(
+        matrix[i - 1][j] + 1,
+        matrix[i][j - 1] + 1,
+        matrix[i - 1][j - 1] + cost
+      );
+    }
+  }
+
+  return matrix[b.length][a.length];
+}
+
+function searchScore(title, query) {
+  const normalizedTitle = normalize(title);
+  const normalizedQuery = normalize(query);
+
+  if (!normalizedQuery) return 0;
+
+  // Perfect match
+  if (normalizedTitle === normalizedQuery) {
+    return 1000;
+  }
+
+  // Normal substring match
+  if (normalizedTitle.includes(normalizedQuery)) {
+    return 900;
+  }
+
+  // Word-by-word matching
+  const words = title.toLowerCase().split(/[\s:.-]+/);
+
+  let bestWordScore = 0;
+
+  for (const word of words) {
+    const normalizedWord = normalize(word);
+
+    if (!normalizedWord) continue;
+
+    if (normalizedWord.includes(normalizedQuery)) {
+      bestWordScore = Math.max(bestWordScore, 800);
+      continue;
+    }
+
+    const distance = levenshtein(normalizedQuery, normalizedWord);
+
+    // Allow small typos
+    const maxDistance =
+      normalizedQuery.length <= 4 ? 1 :
+      normalizedQuery.length <= 7 ? 2 :
+      3;
+
+    if (distance <= maxDistance) {
+      const similarity =
+        1 - distance / Math.max(normalizedQuery.length, normalizedWord.length);
+
+      bestWordScore = Math.max(
+        bestWordScore,
+        700 + similarity * 100
+      );
+    }
+  }
+
+  // Fuzzy match against the entire title
+  const distance = levenshtein(
+    normalizedQuery,
+    normalizedTitle
+  );
+
+  const similarity =
+    1 - distance / Math.max(
+      normalizedQuery.length,
+      normalizedTitle.length
     );
+
+  if (similarity >= 0.55) {
+    bestWordScore = Math.max(
+      bestWordScore,
+      similarity * 600
+    );
+  }
+
+  return bestWordScore;
+}
+
+function updateResults() {
+  const searchTerm = input.value.trim();
+
+  if (!searchTerm) {
+    results = moviesToShow;
+  } else {
+    results = moviesToShow
+      .map(movie => ({
+        movie,
+        score: searchScore(movie.title, searchTerm)
+      }))
+      .filter(item => item.score > 0)
+      .sort((a, b) => b.score - a.score)
+      .map(item => item.movie);
+  }
+
+  count.textContent =
+    `${results.length} result${results.length === 1 ? "" : "s"}` +
+    `${searchTerm ? ` for "${searchTerm}"` : ""}`;
+
+  grid.innerHTML = results.length
+    ? results.map(movieCard).join("")
+    : `<div class="empty-state">No movies found. Try another search.</div>`;
+}
 
     count.textContent =
       `${results.length} result${results.length === 1 ? "" : "s"}` +
