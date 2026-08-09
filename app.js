@@ -10,14 +10,14 @@ const movies = [
   { id: "michael", title: "Michael", year: 2026, rating: "7.5", poster: "assets/movies/michael-1-2026.webp", tag: "MOVIE" },
   { id: "apex", title: "Apex", year: 2026, rating: "6.4", poster: "https://cineby.ws/images/posters/movies/apex-1-2026.webp", tag: "MOVIE" },
   { id: "spider-man", title: "Spider-Man", year: 2002, rating: "7.3", poster: "assets/movies/spider-man-2002.png", tag: "MOVIE" },
-  { id: "spider-man-far-from-home", title: "Spider-Man: Far From Home", year: 2019, rating: "7.4", poster: "assets/movies/", tag: "MOVIE" },
+  { id: "spider-man-far-from-home", title: "Spider-Man: Far From Home", year: 2019, rating: "7.4", poster: "https://cineby.ws/images/posters/movies/spider-man-far-from-home-2019.webp", tag: "MOVIE" },
   { id: "spider-man-2", title: "Spider-Man 2", year: 2004, rating: "7.5", poster: "assets/movies/spider-man-2-2004.png", tag: "MOVIE" },
-  { id: "into-the-spider-verse", title: "Spider-Man: Into the Spider-Verse", year: 2018, rating: "8.4", poster: "assets/movies/", tag: "MOVIE" },
-  { id: "across-the-spider-verse", title: "Spider-Man: Across the Spider-Verse", year: 2023, rating: "8.5", poster: "", tag: "MOVIE" },
+  { id: "into-the-spider-verse", title: "Spider-Man: Into the Spider-Verse", year: 2018, rating: "8.4", poster: "https://cineby.ws/images/posters/movies/spider-man-into-the-spider-verse-2018.webp", tag: "MOVIE" },
+  { id: "across-the-spider-verse", title: "Spider-Man: Across the Spider-Verse", year: 2023, rating: "8.5", poster: "https://cineby.ws/images/posters/movies/spider-man-across-the-spider-verse-2023.webp", tag: "MOVIE" },
   { id: "spider-man-3", title: "Spider-Man 3", year: 2007, rating: "6.3", poster: "assets/movies/spider-man-3-2007.webp", tag: "MOVIE" },
-  { id: "spider-man-no-way-home", title: "Spider-Man: No Way Home", year: 2021, rating: "8.2", poster: "assets/movies/", tag: "MOVIE" },
-  { id: "the-amazing-spider-man", title: "The Amazing Spider-Man", year: 2012, rating: "6.9", poster: "assets/movies/", tag: "MOVIE" },
-  { id: "the-amazing-spider-man-2", title: "The Amazing Spider-Man 2", year: 2014, rating: "6.6", poster: "assets/movies/", tag: "MOVIE" }
+  { id: "spider-man-no-way-home", title: "Spider-Man: No Way Home", year: 2021, rating: "8.2", poster: "https://cineby.ws/images/posters/movies/spider-man-no-way-home-2021.webp", tag: "MOVIE" },
+  { id: "the-amazing-spider-man", title: "The Amazing Spider-Man", year: 2012, rating: "6.9", poster: "https://cineby.ws/images/posters/movies/the-amazing-spider-man-2012.webp", tag: "MOVIE" },
+  { id: "the-amazing-spider-man-2", title: "The Amazing Spider-Man 2", year: 2014, rating: "6.6", poster: "https://cineby.ws/images/posters/movies/the-amazing-spider-man-2-2014.webp tag: "MOVIE" }
 ];
 
 const servers = [
