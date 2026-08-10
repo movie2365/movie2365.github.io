@@ -800,12 +800,15 @@ ${show.year} · ${show.tag}
 
 function pickRandomContent(){
 
-    const content = allContent[
-        Math.floor(Math.random() * allContent.length)
-    ];
+    if (!allContent || allContent.length === 0) {
+        console.error("No content available for random selection.");
+        return;
+    }
 
-    // Random movie
-    if(content.tag === "MOVIE"){
+    const content =
+        allContent[Math.floor(Math.random() * allContent.length)];
+
+    if (content.tag === "MOVIE") {
 
         window.location.href =
             `/player.html?id=${encodeURIComponent(content.id)}`;
@@ -813,13 +816,22 @@ function pickRandomContent(){
         return;
     }
 
-    // Random TV show
     const seasons = Object.keys(content.seasons);
+
+    if (!seasons.length) {
+        console.error("TV show has no seasons:", content.id);
+        return;
+    }
 
     const randomSeason =
         seasons[Math.floor(Math.random() * seasons.length)];
 
     const episodes = content.seasons[randomSeason];
+
+    if (!episodes || episodes.length === 0) {
+        console.error("Season has no episodes:", randomSeason);
+        return;
+    }
 
     const randomEpisode =
         episodes[Math.floor(Math.random() * episodes.length)];
