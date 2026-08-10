@@ -818,44 +818,39 @@ return;
 
 function performSearch(){
 
-const query = searchInput.value
-.toLowerCase()
-.trim();
+    const query = searchInput.value
+        .toLowerCase()
+        .trim();
 
+    // Show nothing when search bar is empty
+    if(!query){
+        resultsGrid.innerHTML = "";
 
-const results = allContent.filter(content =>
-content.title
-.toLowerCase()
-.includes(query)
-);
+        if(resultCount){
+            resultCount.textContent = "";
+        }
 
+        return;
+    }
 
-resultsGrid.innerHTML = results
-.map(content =>
-content.tag === "TV SHOW"
-?
-showCard(content)
-:
-movieCard(content)
-)
-.join("");
+    const results = allContent.filter(content =>
+        content.title
+            .toLowerCase()
+            .includes(query)
+    );
 
+    resultsGrid.innerHTML = results
+        .map(content =>
+            content.tag === "TV SHOW"
+                ? showCard(content)
+                : movieCard(content)
+        )
+        .join("");
 
-if(resultCount){
-
-if(query){
-
-resultCount.textContent =
-`${results.length} results`;
-
-}else{
-
-resultCount.textContent = "";
-
-}
-
-}
-
+    if(resultCount){
+        resultCount.textContent =
+            `${results.length} results`;
+    }
 }
 
 
@@ -877,15 +872,6 @@ performSearch();
 
 }
 
-
-// =======================
-// SEARCH WHILE TYPING
-// =======================
-
-searchInput.addEventListener(
-"input",
-performSearch
-);
 
 
 // =======================
@@ -909,11 +895,6 @@ searchInput.focus();
 }
 
 
-// =======================
-// SHOW EVERYTHING ON LOAD
-// =======================
-
-performSearch();
 
 }
 // =======================
