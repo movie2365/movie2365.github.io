@@ -1802,7 +1802,11 @@ document
 
             iframe.src = src;
 
+
+
             iframe.setAttribute("allowfullscreen", "");
+            iframe.setAttribute("scrolling", "no");
+            iframe.style.overflow = "hidden";
 
             iframe.setAttribute(
                 "allow",
