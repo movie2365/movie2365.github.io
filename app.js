@@ -4,122 +4,39 @@
 
 const movies = [
 
-{
-id:"my-dearest-senorita",
-title:"My Dearest Señorita",
-year:2026,
-rating:"4.0",
-poster:"/assets/movies/my-dearest-se-orita-2026.webp",
-tag:"MOVIE"
-},
-
-{
-id:"scream-7",
-title:"Scream 7",
-year:2026,
-rating:"6.0",
-poster:"/assets/movies/scream-7-2026.webp",
-tag:"MOVIE"
-},
-
-{
-id:"swapped",
-title:"Swapped",
-year:2026,
-rating:"8.8",
-poster:"/assets/movies/swapped-1-2026.webp",
-tag:"MOVIE"
-},
-
-{
-id:"send-help",
-title:"Send Help",
-year:2026,
-rating:"7.1",
-poster:"/assets/movies/send-help-2026.webp",
-tag:"MOVIE"
-},
-
-{
-id:"outcome",
-title:"Outcome",
-year:2026,
-rating:"7.0",
-poster:"/assets/movies/outcome-2026.webp",
-tag:"MOVIE"
-},
-
-{
-id:"the-gates",
-title:"The Gates",
-year:2026,
-rating:"6.9",
-poster:"/assets/movies/the-gates-2026.webp",
-tag:"MOVIE"
-},
-
-{
-id:"thrash",
-title:"Thrash",
-year:2026,
-rating:"6.8",
-poster:"/assets/movies/thrash-2026.webp",
-tag:"MOVIE"
-},
-
-{
-id:"the-devil-wears-prada-2",
-title:"The Devil Wears Prada 2",
-year:2026,
-rating:"8.3",
-poster:"/assets/movies/the-devil-wears-prada-2-2026.webp",
-tag:"MOVIE"
-},
-
-{
-id:"michael",
-title:"Michael",
-year:2026,
-rating:"7.5",
-poster:"/assets/movies/michael-1-2026.webp",
-tag:"MOVIE"
-},
-
-{
-id:"apex",
-title:"Apex",
-year:2026,
-rating:"6.4",
-poster:"https://cineby.ws/images/posters/movies/apex-1-2026.webp",
-tag:"MOVIE"
-},
-
-{
-id:"spider-man",
-title:"Spider-Man",
-year:2002,
-rating:"7.3",
-poster:"/assets/movies/spider-man-2002.png",
-tag:"MOVIE"
-},
-
-{
-id:"spider-man-2",
-title:"Spider-Man 2",
-year:2004,
-rating:"7.5",
-poster:"/assets/movies/spider-man-2-2004.png",
-tag:"MOVIE"
-},
-
-{
-id:"spider-man-3",
-title:"Spider-Man 3",
-year:2007,
-rating:"6.3",
-poster:"/assets/movies/spider-man-3-2007.webp",
-tag:"MOVIE"
-}
+{id:"my-dearest-senorita",title:"My Dearest Señorita",year:2026,rating:"4.0",poster:"/assets/movies/my-dearest-se-orita-2026.webp",tag:"MOVIE"},
+{id:"scream-7",title:"Scream 7",year:2026,rating:"6.0",poster:"/assets/movies/scream-7-2026.webp",tag:"MOVIE"},
+{id:"swapped",title:"Swapped",year:2026,rating:"8.8",poster:"/assets/movies/swapped-1-2026.webp",tag:"MOVIE"},
+{id:"send-help",title:"Send Help",year:2026,rating:"7.1",poster:"/assets/movies/send-help-2026.webp",tag:"MOVIE"},
+{id:"outcome",title:"Outcome",year:2026,rating:"7.0",poster:"/assets/movies/outcome-2026.webp",tag:"MOVIE"},
+{id:"the-gates",title:"The Gates",year:2026,rating:"6.9",poster:"/assets/movies/the-gates-2026.webp",tag:"MOVIE"},
+{id:"thrash",title:"Thrash",year:2026,rating:"6.8",poster:"/assets/movies/thrash-2026.webp",tag:"MOVIE"},
+{id:"the-devil-wears-prada-2",title:"The Devil Wears Prada 2",year:2026,rating:"8.3",poster:"/assets/movies/the-devil-wears-prada-2-2026.webp",tag:"MOVIE"},
+{id:"michael",title:"Michael",year:2026,rating:"7.5",poster:"/assets/movies/michael-1-2026.webp",tag:"MOVIE"},
+{id:"apex",title:"Apex",year:2026,rating:"6.4",poster:"https://cineby.ws/images/posters/movies/apex-1-2026.webp",tag:"MOVIE"},
+{id:"spider-man",title:"Spider-Man",year:2002,rating:"7.3",poster:"/assets/movies/spider-man-2002.png",tag:"MOVIE"},
+{id:"spider-man-2",title:"Spider-Man 2",year:2004,rating:"7.5",poster:"/assets/movies/spider-man-2-2004.png",tag:"MOVIE"},
+{id:"spider-man-3",title:"Spider-Man 3",year:2007,rating:"6.3",poster:"/assets/movies/spider-man-3-2007.webp",tag:"MOVIE"},
+{id:"spider-man-brand-new-day",title:"Spider-Man: Brand New Day",year:2026,rating:"0.0",poster:"https://cineby.ws/images/posters/movies/spider-man-brand-new-day-2026.webp",tag:"MOVIE"},
+{id:"the-odyssey",title:"The Odyssey",year:2026,rating:"5.8",poster:"https://cineby.ws/images/posters/movies/the-odyssey-1-2026.webp",tag:"MOVIE"},
+{id:"toy-story-5",title:"Toy Story 5",year:2026,rating:"0.0",poster:"https://cineby.ws/images/posters/movies/toy-story-5-2026.webp",tag:"MOVIE"},
+{id:"the-super-mario-galaxy-movie",title:"The Super Mario Galaxy Movie",year:2026,rating:"8.3",poster:"https://cineby.ws/images/posters/movies/the-super-mario-galaxy-movie-2026.webp",tag:"MOVIE"},
+{id:"project-hail-mary",title:"Project Hail Mary",year:2026,rating:"8.7",poster:"https://cineby.ws/images/posters/movies/project-hail-mary-2026.webp",tag:"MOVIE"},
+{id:"michael",title:"Michael",year:2026,rating:"8.7",poster:"https://cineby.ws/images/posters/movies/michael-1-2026.webp",tag:"MOVIE"},
+{id:"the-devil-wears-prada-2",title:"The Devil Wears Prada 2",year:2026,rating:"0.0",poster:"https://cineby.ws/images/posters/movies/the-devil-wears-prada-2-2026.webp",tag:"MOVIE"},
+{id:"scream-7",title:"Scream 7",year:2026,rating:"0.0",poster:"https://cineby.ws/images/posters/movies/scream-7-2026.webp",tag:"MOVIE"},
+{id:"hoppers",title:"Hoppers",year:2026,rating:"0.0",poster:"https://cineby.ws/images/posters/movies/hoppers-2026.webp",tag:"MOVIE"},
+{id:"wuthering-heights",title:"Wuthering Heights",year:2026,rating:"0.0",poster:"https://cineby.ws/images/posters/movies/wuthering-heights-2026.webp",tag:"MOVIE"},
+{id:"goat",title:"Goat",year:2026,rating:"0.0",poster:"https://cineby.ws/images/posters/movies/goat-2026.webp",tag:"MOVIE"},
+{id:"send-help",title:"Send Help",year:2026,rating:"0.0",poster:"https://cineby.ws/images/posters/movies/send-help-2026.webp",tag:"MOVIE"},
+{id:"reminders-of-him",title:"Reminders of Him",year:2026,rating:"0.0",poster:"https://cineby.ws/images/posters/movies/reminders-of-him-2026.webp",tag:"MOVIE"},
+{id:"avatar-fire-and-ash",title:"Avatar: Fire and Ash",year:2025,rating:"0.0",poster:"https://cineby.ws/images/posters/movies/fire-2025.webp",tag:"MOVIE"},
+{id:"mortal-kombat-ii",title:"Mortal Kombat II",year:2026,rating:"8.0",poster:"https://cineby.ws/images/posters/movies/mortal-kombat-ii-2026.webp",tag:"MOVIE"},
+{id:"supergirl",title:"Supergirl",year:2026,rating:"6.2",poster:"https://cineby.ws/images/posters/movies/supergirl-1-2026.webp",tag:"MOVIE"},
+{id:"avengers-doomsday",title:"Avengers: Doomsday",year:2026,rating:"0.0",poster:"https://cineby.ws/images/posters/movies/avengers-doomsday-2026.webp",tag:"MOVIE"},
+{id:"moana",title:"Moana",year:2026,rating:"0.0",poster:"https://cineby.ws/images/posters/movies/moana-1-2026.webp",tag:"MOVIE"},
+{id:"evil-dead-burn",title:"Evil Dead Burn",year:2026,rating:"6.8",poster:"https://cineby.ws/images/posters/movies/evil-dead-burn-2026.webp",tag:"MOVIE"},
+{id:"masters-of-the-universe",title:"Masters of the Universe",year:2026,rating:"0.0",poster:"https://cineby.ws/images/posters/movies/masters-of-the-universe-1-2026.webp",tag:"MOVIE"},
 
 ];
 
@@ -168,7 +85,43 @@ const movieIds = {
 
 "michael":"936075",
 
-"apex":"1318447"
+"apex":"1318447",
+
+const movieIds = {
+
+"spider-man":"557",
+"spider-man-2":"558",
+"spider-man-3":"559",
+
+"my-dearest-senorita":"1239198",
+"scream-7":"1159559",
+"swapped":"1007757",
+"send-help":"1198994",
+"outcome":"1049471",
+"the-gates":"1366906",
+"thrash":"1290417",
+"the-devil-wears-prada-2":"1314481",
+"michael":"936075",
+"apex":"1318447",
+
+"spider-man-brand-new-day":"969681",
+"the-odyssey":"1234821",
+"toy-story-5":"1371727",
+"the-super-mario-galaxy-movie":"1311031",
+"project-hail-mary":"1184918",
+"hoppers":"1227897",
+"wuthering-heights":"1136867",
+"goat":"1302179",
+"reminders-of-him":"1337562",
+"avatar-fire-and-ash":"83533",
+"mortal-kombat-ii":"1046090",
+"supergirl":"1061474",
+"avengers-doomsday":"1000889",
+"moana":"83723",
+"evil-dead-burn":"1457577",
+"masters-of-the-universe":"1459370"
+
+};
 
 };
 
