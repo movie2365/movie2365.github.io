@@ -59,33 +59,6 @@ const shows = [
 // MOVIE IDS
 // =======================
 
-const movieIds = {
-
-"spider-man":"557",
-
-"spider-man-2":"558",
-
-"spider-man-3":"559",
-
-"my-dearest-senorita":"1239198",
-
-"scream-7":"1159559",
-
-"swapped":"1007757",
-
-"send-help":"1198994",
-
-"outcome":"1049471",
-
-"the-gates":"1366906",
-
-"thrash":"1290417",
-
-"the-devil-wears-prada-2":"1314481",
-
-"michael":"936075",
-
-"apex":"1318447",
 
 const movieIds = {
 
@@ -123,7 +96,6 @@ const movieIds = {
 
 };
 
-};
 
 
 
