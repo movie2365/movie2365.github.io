@@ -798,6 +798,38 @@ ${show.year} · ${show.tag}
 
 }
 
+function pickRandomContent(){
+
+    const content = allContent[
+        Math.floor(Math.random() * allContent.length)
+    ];
+
+    // Random movie
+    if(content.tag === "MOVIE"){
+
+        window.location.href =
+            `/player.html?id=${encodeURIComponent(content.id)}`;
+
+        return;
+    }
+
+    // Random TV show
+    const seasons = Object.keys(content.seasons);
+
+    const randomSeason =
+        seasons[Math.floor(Math.random() * seasons.length)];
+
+    const episodes = content.seasons[randomSeason];
+
+    const randomEpisode =
+        episodes[Math.floor(Math.random() * episodes.length)];
+
+    window.location.href =
+        `/player.html?id=${encodeURIComponent(content.id)}` +
+        `&season=${randomEpisode.season}` +
+        `&episode=${randomEpisode.episode}`;
+}
+
 
 // =======================
 // SEARCH PAGE
@@ -817,6 +849,13 @@ let currentFilter = "all";
 const urlParams = new URLSearchParams(window.location.search);
 const urlQuery = urlParams.get("q");
 
+const isRandom = urlParams.get("random") === "1";
+
+if (isRandom) {
+    pickRandomContent();
+    return;
+}
+  
 if(urlQuery){
     searchInput.value = urlQuery;
 }
