@@ -1713,13 +1713,16 @@ stack.innerHTML =
             >
 
                 <button
-                    class="player-play-button"
-                    type="button"
-                    aria-label="Play ${escapeHtml(server)}"
-                >
-                    <span class="play-icon">▶</span>
-                    <span>Play</span>
-                </button>
+                  class="player-play-button"
+                  type="button"
+                  aria-label="Play ${escapeHtml(server)}"
+              >
+                  <img
+                      src="/assets/play-icon.png"
+                      alt="Play"
+                      class="play-icon"
+                  >
+              </button>
 
             </div>
             
