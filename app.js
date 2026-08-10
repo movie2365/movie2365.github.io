@@ -870,10 +870,13 @@ function performSearch(){
         )
         .join("");
 
-    if(resultCount){
-        resultCount.textContent =
-            `${results.length} results`;
-    }
+        if(resultCount){
+            const count = results.length;
+            const queryText = searchInput.value.trim();
+
+            resultCount.textContent =
+                `${count} ${count === 1 ? "result" : "results"} for "${queryText}"`;
+        }
 }
 
 
