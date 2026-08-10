@@ -815,8 +815,6 @@ if(!searchInput || !resultsGrid){
 return;
 }
 
-resultsGrid.innerHTML = "";
-
 if(resultCount){
 resultCount.textContent = "";
 }
