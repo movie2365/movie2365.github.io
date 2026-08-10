@@ -810,6 +810,9 @@ const resultsGrid = document.querySelector("#results-grid");
 const resultCount = document.querySelector("#result-count");
 const clearButton = document.querySelector("#clear-search");
 const searchForm = document.querySelector("#results-search");
+const filterButtons = document.querySelectorAll(".filter");
+
+let currentFilter = "all";
 
 if(!searchInput || !resultsGrid){
 return;
@@ -822,7 +825,7 @@ function performSearch(){
         .toLowerCase()
         .trim();
 
-    // Show nothing when search bar is empty
+    // Nothing typed = show nothing
     if(!query){
         resultsGrid.innerHTML = "";
 
@@ -833,11 +836,24 @@ function performSearch(){
         return;
     }
 
-    const results = allContent.filter(content =>
+    let results = allContent.filter(content =>
         content.title
             .toLowerCase()
             .includes(query)
     );
+
+    // Apply selected filter
+    if(currentFilter === "movie"){
+        results = results.filter(
+            content => content.tag === "MOVIE"
+        );
+    }
+
+    if(currentFilter === "tv"){
+        results = results.filter(
+            content => content.tag === "TV SHOW"
+        );
+    }
 
     resultsGrid.innerHTML = results
         .map(content =>
@@ -894,7 +910,31 @@ searchInput.focus();
 
 }
 
+// =======================
+// FILTER BUTTONS
+// =======================
 
+filterButtons.forEach(button => {
+
+    button.addEventListener("click", () => {
+
+        // Remove active from all buttons
+        filterButtons.forEach(btn =>
+            btn.classList.remove("active")
+        );
+
+        // Make clicked button active
+        button.classList.add("active");
+
+        // Set current filter
+        currentFilter = button.dataset.filter;
+
+        // Update results
+        performSearch();
+
+    });
+
+});
 
 }
 // =======================
