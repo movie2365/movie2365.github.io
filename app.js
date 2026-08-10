@@ -665,7 +665,7 @@ return `
 
 class="movie-card"
 
-href="player.html?id=${encodeURIComponent(movie.id)}"
+href="/player.html?id=${encodeURIComponent(movie.id)}"
 
 >
 
@@ -996,7 +996,7 @@ content.tag === "TV SHOW"
 
 :
 
-`player.html?id=${encodeURIComponent(content.id)}`
+`/player.html?id=${encodeURIComponent(content.id)}`
 
 }"
 
@@ -1270,7 +1270,7 @@ episode =>
 
 class="episode-card"
 
-href="player.html?id=${encodeURIComponent(show.id)}&season=${episode.season}&episode=${episode.episode}"
+href="/player.html?id=${encodeURIComponent(show.id)}&season=${episode.season}&episode=${episode.episode}"
 
 >
 
