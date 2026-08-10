@@ -815,29 +815,20 @@ if(!searchInput || !resultsGrid){
 return;
 }
 
+
 function performSearch(){
 
 const query = searchInput.value
 .toLowerCase()
 .trim();
 
-if(!query){
-
-resultsGrid.innerHTML = "";
-
-if(resultCount){
-resultCount.textContent = "";
-}
-
-return;
-
-}
 
 const results = allContent.filter(content =>
 content.title
 .toLowerCase()
 .includes(query)
 );
+
 
 resultsGrid.innerHTML = results
 .map(content =>
@@ -849,15 +840,34 @@ movieCard(content)
 )
 .join("");
 
+
 if(resultCount){
-resultCount.textContent = `${results.length} results`;
+
+if(query){
+
+resultCount.textContent =
+`${results.length} results`;
+
+}else{
+
+resultCount.textContent = "";
+
 }
 
 }
+
+}
+
+
+// =======================
+// SEARCH FORM
+// =======================
 
 if(searchForm){
 
-searchForm.addEventListener("submit", event => {
+searchForm.addEventListener(
+"submit",
+event => {
 
 event.preventDefault();
 
@@ -867,23 +877,43 @@ performSearch();
 
 }
 
+
+// =======================
+// SEARCH WHILE TYPING
+// =======================
+
+searchInput.addEventListener(
+"input",
+performSearch
+);
+
+
+// =======================
+// CLEAR SEARCH
+// =======================
+
 if(clearButton){
 
-clearButton.addEventListener("click", () => {
+clearButton.addEventListener(
+"click",
+() => {
 
 searchInput.value = "";
 
-resultsGrid.innerHTML = "";
-
-if(resultCount){
-resultCount.textContent = "";
-}
+performSearch();
 
 searchInput.focus();
 
 });
 
 }
+
+
+// =======================
+// SHOW EVERYTHING ON LOAD
+// =======================
+
+performSearch();
 
 }
 // =======================
