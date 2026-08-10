@@ -9,7 +9,7 @@ id:"my-dearest-senorita",
 title:"My Dearest Señorita",
 year:2026,
 rating:"4.0",
-poster:"assets/movies/my-dearest-se-orita-2026.webp",
+poster:"/assets/movies/my-dearest-se-orita-2026.webp",
 tag:"MOVIE"
 },
 
@@ -18,7 +18,7 @@ id:"scream-7",
 title:"Scream 7",
 year:2026,
 rating:"6.0",
-poster:"assets/movies/scream-7-2026.webp",
+poster:"/assets/movies/scream-7-2026.webp",
 tag:"MOVIE"
 },
 
@@ -27,7 +27,7 @@ id:"swapped",
 title:"Swapped",
 year:2026,
 rating:"8.8",
-poster:"assets/movies/swapped-1-2026.webp",
+poster:"/assets/movies/swapped-1-2026.webp",
 tag:"MOVIE"
 },
 
@@ -36,7 +36,7 @@ id:"send-help",
 title:"Send Help",
 year:2026,
 rating:"7.1",
-poster:"assets/movies/send-help-2026.webp",
+poster:"/assets/movies/send-help-2026.webp",
 tag:"MOVIE"
 },
 
@@ -45,7 +45,7 @@ id:"outcome",
 title:"Outcome",
 year:2026,
 rating:"7.0",
-poster:"assets/movies/outcome-2026.webp",
+poster:"/assets/movies/outcome-2026.webp",
 tag:"MOVIE"
 },
 
@@ -54,7 +54,7 @@ id:"the-gates",
 title:"The Gates",
 year:2026,
 rating:"6.9",
-poster:"assets/movies/the-gates-2026.webp",
+poster:"/assets/movies/the-gates-2026.webp",
 tag:"MOVIE"
 },
 
@@ -63,7 +63,7 @@ id:"thrash",
 title:"Thrash",
 year:2026,
 rating:"6.8",
-poster:"assets/movies/thrash-2026.webp",
+poster:"/assets/movies/thrash-2026.webp",
 tag:"MOVIE"
 },
 
@@ -72,7 +72,7 @@ id:"the-devil-wears-prada-2",
 title:"The Devil Wears Prada 2",
 year:2026,
 rating:"8.3",
-poster:"assets/movies/the-devil-wears-prada-2-2026.webp",
+poster:"/assets/movies/the-devil-wears-prada-2-2026.webp",
 tag:"MOVIE"
 },
 
@@ -81,7 +81,7 @@ id:"michael",
 title:"Michael",
 year:2026,
 rating:"7.5",
-poster:"assets/movies/michael-1-2026.webp",
+poster:"/assets/movies/michael-1-2026.webp",
 tag:"MOVIE"
 },
 
@@ -90,7 +90,7 @@ id:"apex",
 title:"Apex",
 year:2026,
 rating:"6.4",
-poster:"https://cineby.ws/images/posters/movies/apex-1-2026.webp",
+poster:"/https://cineby.ws/images/posters/movies/apex-1-2026.webp",
 tag:"MOVIE"
 },
 
@@ -99,7 +99,7 @@ id:"spider-man",
 title:"Spider-Man",
 year:2002,
 rating:"7.3",
-poster:"assets/movies/spider-man-2002.png",
+poster:"/assets/movies/spider-man-2002.png",
 tag:"MOVIE"
 },
 
@@ -108,7 +108,7 @@ id:"spider-man-2",
 title:"Spider-Man 2",
 year:2004,
 rating:"7.5",
-poster:"assets/movies/spider-man-2-2004.png",
+poster:"/assets/movies/spider-man-2-2004.png",
 tag:"MOVIE"
 },
 
@@ -117,7 +117,7 @@ id:"spider-man-3",
 title:"Spider-Man 3",
 year:2007,
 rating:"6.3",
-poster:"assets/movies/spider-man-3-2007.webp",
+poster:"/assets/movies/spider-man-3-2007.webp",
 tag:"MOVIE"
 }
 
