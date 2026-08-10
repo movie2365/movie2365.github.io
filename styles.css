@@ -3549,3 +3549,175 @@ body {
     display: block;
     overflow: hidden;
 }
+
+/* =========================
+   MOBILE PLAYER + SHOW PAGE
+========================= */
+
+@media (max-width: 700px) {
+
+    /* Header */
+    .site-header {
+        width: 100%;
+        padding: 0 14px;
+    }
+
+    nav {
+        gap: 10px;
+        font-size: 11px;
+    }
+
+    .nav-link,
+    .nav-dropdown-toggle {
+        gap: 4px;
+    }
+
+    /* Hide less important navigation on small screens */
+    .nav-dropdown {
+        display: none;
+    }
+
+    /* Search */
+    .search-bar {
+        width: calc(100vw - 28px);
+        height: 54px;
+        padding-left: 16px;
+    }
+
+    .search-bar button {
+        min-width: 95px;
+        height: 44px;
+        font-size: 12px;
+    }
+
+    .search-symbol {
+        font-size: 22px;
+        margin-right: 10px;
+    }
+
+    /* Movie grid */
+    .movie-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 14px 10px;
+    }
+
+    .search-page,
+    .watch-page {
+        width: calc(100% - 24px);
+        max-width: none;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* PLAYER */
+    .player-wrap {
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        min-height: 0;
+        border-radius: 7px;
+    }
+
+    .player-stack {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+    }
+
+    .server-frame,
+    .player-iframe {
+        width: 100%;
+        height: 100%;
+        border: 0;
+    }
+
+    /* Server buttons */
+    .server-buttons {
+        gap: 6px;
+        padding: 0;
+    }
+
+    .server-button {
+        padding: 8px 12px;
+        font-size: 11px;
+    }
+
+    .server-notice {
+        width: auto;
+        text-align: center;
+        font-size: 11px;
+        margin-top: 20px;
+    }
+
+    /* Movie info */
+    .movie-info {
+        margin-top: 20px;
+        padding-top: 15px;
+    }
+
+    .movie-info h1 {
+        font-size: 20px;
+    }
+
+    /* SHOW PAGE */
+    .show-page {
+        width: calc(100% - 24px);
+        max-width: none;
+        padding-top: 20px;
+    }
+
+    .show-header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 18px;
+        margin-bottom: 25px;
+    }
+
+    .show-poster {
+        width: 150px;
+        height: 225px;
+    }
+
+    .show-header h1 {
+        font-size: 27px;
+        margin: 0 0 8px;
+    }
+
+    .show-header p {
+        font-size: 14px;
+        margin: 0;
+    }
+
+    .episodes-section {
+        margin-top: 25px;
+    }
+
+    .episodes-header {
+        gap: 12px;
+    }
+
+    .episodes-header h2 {
+        font-size: 21px;
+    }
+
+    #season-select {
+        padding: 9px 12px;
+        font-size: 12px;
+    }
+
+    .episode-card {
+        gap: 12px;
+        padding: 14px;
+        margin: 8px 0;
+    }
+
+    .episode-number {
+        width: 28px;
+        font-size: 17px;
+    }
+
+    .episode-card span {
+        font-size: 18px;
+    }
+
+}
