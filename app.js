@@ -588,7 +588,7 @@ return String(value).replace(/[&<>"']/g, character => ({
 "&":"&amp;",
 "<":"&lt;",
 ">":"&gt;",
-"\"":"&quot;",
+'"':"&quot;",
 "'":"&#039;"
 
 }[character]));
