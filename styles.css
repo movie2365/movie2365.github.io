@@ -3136,73 +3136,128 @@ code {
 }
 
 /* =========================
-   LIBRARY SWITCH BUTTONS
-   ========================= */
+   LIBRARY HERO
+========================= */
+
+.hero {
+    min-height: auto;
+
+    padding: 28px 20px 8px;
+
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    background:
+        radial-gradient(
+            ellipse at 50% 0%,
+            rgba(110, 0, 8, 0.34),
+            transparent 55%
+        ),
+        linear-gradient(
+            #070000,
+            #000000 76%
+        );
+
+    border-top: 1px solid #080808;
+}
+
+.library-subtitle {
+    margin: 0;
+
+    color: #bdbdbd;
+
+    font-size: 16px;
+
+    font-weight: 600;
+
+    letter-spacing: 1px;
+
+    text-transform: uppercase;
+
+    opacity: 0.9;
+}
+
+
+/* =========================
+   MOVIES / TV SWITCH
+========================= */
 
 .library-switch {
 
-  display: flex;
+    display: flex;
 
-  justify-content: center;
+    justify-content: center;
 
-  align-items: center;
+    align-items: center;
 
-  gap: 12px;
+    gap: 12px;
 
-  margin-top: 25px;
+    margin-top: 12px;
 
-  margin-bottom: 35px;
+    margin-bottom: 28px;
 
 }
-
 
 .library-switch-button {
 
-  display: inline-flex;
+    display: inline-flex;
 
-  align-items: center;
+    align-items: center;
 
-  justify-content: center;
+    justify-content: center;
 
-  padding: 11px 22px;
+    padding: 11px 22px;
 
-  border-radius: 30px;
+    border-radius: 30px;
 
-  background: #ed111c;
+    background: #ed111c;
 
-  color: white;
+    color: white;
 
-  font-size: 13px;
+    font-size: 13px;
 
-  font-weight: 800;
+    font-weight: 800;
 
-  border: 1px solid #ff2833;
+    border: 1px solid #ff2833;
 
-  transition:
-    transform 0.2s ease,
-    background 0.2s ease,
-    box-shadow 0.2s ease;
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease,
+        box-shadow 0.2s ease;
 
 }
-
 
 .library-switch-button:hover {
 
-  background: #ff1d29;
+    background: #ff1d29;
 
-  transform: translateY(-2px);
+    transform: translateY(-2px);
 
-  box-shadow:
-    0 6px 20px rgba(237, 17, 28, 0.3);
+    box-shadow:
+        0 6px 20px rgba(237, 17, 28, 0.3);
+
+}
+
+.library-switch-button.active {
+
+    background: #a4070d;
+
+    border-color: #ed111c;
 
 }
 
 
-.library-switch-button.active {
+/* =========================
+   LIBRARY GRID
+========================= */
 
-  background: #a4070d;
+#tv-library,
+#movie-library {
 
-  border-color: #ed111c;
+    margin-top: 0;
 
 }
 
