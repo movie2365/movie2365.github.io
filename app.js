@@ -798,12 +798,12 @@ ${show.year} · ${show.tag}
 
 }
 
+```js
 // =======================
 // SEARCH PAGE
 // =======================
 
 function renderSearch(){
-
 
 const searchInput = document.querySelector("#search-input");
 
@@ -813,6 +813,7 @@ const resultCount = document.querySelector("#result-count");
 
 const clearButton = document.querySelector("#clear-search");
 
+const searchButton = document.querySelector("#search-button");
 
 if(!searchInput || !resultsGrid){
 
@@ -821,26 +822,48 @@ return;
 }
 
 
+// Nothing should show when page loads
+
+resultsGrid.innerHTML = "";
+
+if(resultCount){
+
+resultCount.textContent = "";
+
+}
 
 
-function updateSearch(){
+// =======================
+// PERFORM SEARCH
+// =======================
 
+function performSearch(){
 
 const query = searchInput.value
 .toLowerCase()
 .trim();
 
 
+// If nothing was typed, show nothing
+
+if(!query){
+
+resultsGrid.innerHTML = "";
+
+if(resultCount){
+
+resultCount.textContent = "";
+
+}
+
+return;
+
+}
 
 
-let results = allContent;
+// Search movies and shows
 
-
-
-
-if(query){
-
-results = allContent.filter(content =>
+const results = allContent.filter(content =>
 
 content.title
 .toLowerCase()
@@ -848,16 +871,12 @@ content.title
 
 );
 
-}
 
-
-
-
+// Display results
 
 resultsGrid.innerHTML = results
 
 .map(content =>
-
 
 content.tag === "TV SHOW"
 
@@ -869,14 +888,12 @@ showCard(content)
 
 movieCard(content)
 
-
 )
 
 .join("");
 
 
-
-
+// Result count
 
 if(resultCount){
 
@@ -886,24 +903,48 @@ resultCount.textContent =
 
 }
 
+}
 
+
+// =======================
+// ENTER KEY
+// =======================
+
+searchInput.addEventListener(
+
+"keydown",
+
+event =>{
+
+if(event.key === "Enter"){
+
+performSearch();
+
+}
+
+});
+
+
+// =======================
+// SEARCH BUTTON
+// =======================
+
+if(searchButton){
+
+searchButton.addEventListener(
+
+"click",
+
+performSearch
+
+);
 
 }
 
 
-
-
-searchInput.addEventListener(
-
-"input",
-
-updateSearch
-
-);
-
-
-
-
+// =======================
+// CLEAR BUTTON
+// =======================
 
 if(clearButton){
 
@@ -913,11 +954,15 @@ clearButton.addEventListener(
 
 ()=>{
 
-
 searchInput.value = "";
 
-updateSearch();
+resultsGrid.innerHTML = "";
 
+if(resultCount){
+
+resultCount.textContent = "";
+
+}
 
 }
 
@@ -925,14 +970,8 @@ updateSearch();
 
 }
 
-
-
-
-
-updateSearch();
-
-
 }
+```
 
 // =======================
 // ALL CONTENT
