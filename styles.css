@@ -1531,3 +1531,74 @@ code {
   opacity: 0.9;
 }
 
+/* =========================
+   LIBRARY SWITCH BUTTONS
+   ========================= */
+
+.library-switch {
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  gap: 12px;
+
+  margin-top: 25px;
+
+  margin-bottom: 35px;
+
+}
+
+
+.library-switch-button {
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding: 11px 22px;
+
+  border-radius: 30px;
+
+  background: #ed111c;
+
+  color: white;
+
+  font-size: 13px;
+
+  font-weight: 800;
+
+  border: 1px solid #ff2833;
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease,
+    box-shadow 0.2s ease;
+
+}
+
+
+.library-switch-button:hover {
+
+  background: #ff1d29;
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 6px 20px rgba(237, 17, 28, 0.3);
+
+}
+
+
+.library-switch-button.active {
+
+  background: #a4070d;
+
+  border-color: #ed111c;
+
+}
+
