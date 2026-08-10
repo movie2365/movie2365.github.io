@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>TV Shows - Movie2365</title>
+
+  <link rel="stylesheet" href="/style.css">
+
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     NAVBAR
+     ========================= -->
+
+<header>
+
+  <a
+    class="brand"
+    href="https://brady2365.github.io"
+  >
+
+    <img
+      src="/assets/movie2365-logo.png"
+      alt="Movie2365 logo"
+      style="width:30px !important; height:30px !important; object-fit:contain; flex:0 0 30px;"
+    >
+
+    <span>
+      Movie2365
+    </span>
+
+  </a>
+
+
+  <nav>
+
+    <a href="https://brady2365.github.io">
+      ⌂ Home
+    </a>
+
+    <a
+      class="active"
+      href="/search"
+    >
+      ▦ Browse
+    </a>
+
+    <a href="/search">
+      ⊠ Random
+    </a>
+
+    <a
+      class="search-icon"
+      href="/search"
+      aria-label="Search"
+    >
+      ⌕
+    </a>
+
+  </nav>
+
+</header>
+
+
+
+<!-- =========================
+     LIBRARY
+     ========================= -->
+
+<main class="library-page">
+
+
+  <div class="library-header">
+
+    <h1>
+      TV Shows
+    </h1>
+
+    <p>
+      Browse all TV shows
+    </p>
+
+  </div>
+
+
+
+  <!-- =========================
+       MOVIES / TV SWITCH
+       ========================= -->
+
+  <div class="library-switch">
+
+    <a
+      class="library-switch-button"
+      href="/library/movies/index.html"
+    >
+      🎬 Movies
+    </a>
+
+
+    <a
+      class="library-switch-button active"
+      href="/library/tv-shows/index.html"
+    >
+      📺 TV Shows
+    </a>
+
+  </div>
+
+
+
+  <!-- =========================
+       TV GRID
+       ========================= -->
+
+  <div
+    id="tv-library"
+    class="results-grid"
+  ></div>
+
+
+</main>
+
+
+
+<script src="/app.js"></script>
+
+
+<script>
+
+const library = document.querySelector(
+  "#tv-library"
+);
+
+
+if(library && typeof shows !== "undefined"){
+
+  library.innerHTML = shows
+    .map(show => showCard(show))
+    .join("");
+
+}
+
+</script>
+
+
+</body>
+
+</html>
