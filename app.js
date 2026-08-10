@@ -806,36 +806,20 @@ ${show.year} · ${show.tag}
 function renderSearch(){
 
 const searchInput = document.querySelector("#search-input");
-
 const resultsGrid = document.querySelector("#results-grid");
-
 const resultCount = document.querySelector("#result-count");
-
 const clearButton = document.querySelector("#clear-search");
-
 const searchButton = document.querySelector("#search-button");
 
 if(!searchInput || !resultsGrid){
-
 return;
-
 }
-
-
-// Nothing should show when page loads
 
 resultsGrid.innerHTML = "";
 
 if(resultCount){
-
 resultCount.textContent = "";
-
 }
-
-
-// =======================
-// PERFORM SEARCH
-// =======================
 
 function performSearch(){
 
@@ -843,135 +827,78 @@ const query = searchInput.value
 .toLowerCase()
 .trim();
 
-
-// If nothing was typed, show nothing
-
 if(!query){
 
 resultsGrid.innerHTML = "";
 
 if(resultCount){
-
 resultCount.textContent = "";
-
 }
 
 return;
 
 }
 
-
-// Search movies and shows
-
 const results = allContent.filter(content =>
-
 content.title
 .toLowerCase()
 .includes(query)
-
 );
 
-
-// Display results
-
 resultsGrid.innerHTML = results
-
 .map(content =>
-
 content.tag === "TV SHOW"
-
 ?
-
 showCard(content)
-
 :
-
 movieCard(content)
-
 )
-
 .join("");
 
-
-// Result count
-
 if(resultCount){
-
-resultCount.textContent =
-
-`${results.length} results`;
-
+resultCount.textContent = `${results.length} results`;
 }
 
 }
-
-
-// =======================
-// ENTER KEY
-// =======================
 
 searchInput.addEventListener(
-
 "keydown",
-
 event =>{
 
 if(event.key === "Enter"){
-
 performSearch();
-
 }
 
 });
 
-
-// =======================
-// SEARCH BUTTON
-// =======================
-
 if(searchButton){
 
 searchButton.addEventListener(
-
 "click",
-
 performSearch
-
 );
 
 }
-
-
-// =======================
-// CLEAR BUTTON
-// =======================
 
 if(clearButton){
 
 clearButton.addEventListener(
-
 "click",
-
 ()=>{
 
 searchInput.value = "";
-
 resultsGrid.innerHTML = "";
 
 if(resultCount){
-
 resultCount.textContent = "";
-
 }
 
 }
-
 );
 
 }
 
 }
-```
 
 // =======================
 // ALL CONTENT
@@ -980,7 +907,6 @@ resultCount.textContent = "";
 const allContent = [
 
 ...movies,
-
 ...shows
 
 ];
