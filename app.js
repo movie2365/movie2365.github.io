@@ -1809,8 +1809,8 @@ document
             iframe.style.overflow = "hidden";
 
             iframe.setAttribute(
-                "allow",
-                "autoplay; fullscreen"
+                "sandbox",
+                "allow-scripts allow-same-origin allow-forms"
             );
 
             iframe.className =
