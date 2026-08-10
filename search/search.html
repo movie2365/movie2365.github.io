@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" href="assets/movie2365-logo.png" type="image/png">
+
+  <title>Movie2365 - Search</title>
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body data-page="search">
+
+  <!-- =========================
+       HEADER
+       ========================= -->
+
+  <header class="site-header">
+
+    <a class="brand" href="index.html">
+      <img
+       src="assets/movie2365-logo.png"
+       alt="Movie2365 logo"
+       style="width: 30px !important; height: 30px !important; object-fit: contain; flex: 0 0 30px;"
+      >
+      <span>Movie2365</span>
+    </a>
+
+    <nav>
+
+      <a href="index.html">
+        ⌂ Home
+      </a>
+
+      <a class="active" href="search.html">
+        ▦ Browse
+      </a>
+
+      <a href="search.html?random=1">
+        ⊠ Random
+      </a>
+
+      <a
+        class="search-icon"
+        href="search.html"
+        aria-label="Search"
+      >
+        ⌕
+      </a>
+
+    </nav>
+
+  </header>
+
+
+  <!-- =========================
+       SEARCH PAGE
+       ========================= -->
+
+  <main class="search-page">
+
+
+    <!-- SEARCH BAR -->
+
+    <form
+      id="results-search"
+      class="results-search"
+    >
+
+      <span class="search-symbol">
+        ⌕
+      </span>
+
+      <input
+        id="search-input"
+        name="q"
+        type="search"
+        placeholder="Search movies and TV shows..."
+        autocomplete="off"
+      >
+
+        <button type="submit" class="search-button">
+          Search <span>›</span>
+        </button>
+
+    </form>
+
+
+    <!-- =========================
+         FILTER BUTTONS
+         ========================= -->
+
+<div class="filters">
+
+  <button
+    class="filter active"
+    type="button"
+    data-filter="all"
+  >
+    All
+  </button>
+
+  <button
+    class="filter"
+    type="button"
+    data-filter="movie"
+  >
+    Movies
+  </button>
+
+  <button
+    class="filter"
+    type="button"
+    data-filter="tv"
+  >
+    TV Shows
+  </button>
+
+</div>
+
+
+    <!-- RESULT COUNT -->
+
+    <p
+      id="result-count"
+      class="result-count"
+    ></p>
+
+
+    <!-- =========================
+         MOVIE GRID
+         ========================= -->
+
+    <!--
+      JavaScript automatically puts
+      the movie cards in this area.
+    -->
+
+    <div
+      id="results-grid"
+      class="movie-grid"
+    ></div>
+
+
+  </main>
+
+
+  <!-- =========================
+       JAVASCRIPT
+       ========================= -->
+
+  <script src="app.js"></script>
+
+</body>
+</html>
