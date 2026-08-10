@@ -1,4 +1,4 @@
-// =======================
+  // =======================
 // MOVIE DATABASE
 // =======================
 
@@ -583,15 +583,15 @@ createEpisodeSources();
 
 function escapeHtml(value){
 
-return String(value).replace(/[&<>"']/g, character => ({
+  return String(value).replace(/[&<>"']/g, character => ({
 
-"&":"&amp;",
-"<":"&lt;",
-">":"&gt;",
-'"':"&quot;",
-"'":"&#039;"
+    "&":"&amp;",
+    "<":"&lt;",
+    ">":"&gt;",
+    '"':"&quot;",
+    "'":"&#039;"
 
-}[character]));
+  }[character]));
 
 }
 
@@ -1001,10 +1001,9 @@ const allContent = [
 
 ];
 
-
-
-
-
+// =======================
+// RANDOM CONTENT
+// =======================
 
 
 
@@ -1937,9 +1936,6 @@ fallback.classList.add(
 
 
 renderHome();
-
 renderSearch();
-
 renderShowPage();
-
 renderPlayer();
