@@ -3206,3 +3206,195 @@ code {
 
 }
 
+/* =========================
+   MODERN NAVIGATION
+   ========================= */
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: 26px;
+
+  color: #a8a8a8;
+
+  font-size: 14px;
+  font-weight: 650;
+}
+
+
+/* NAV LINKS */
+
+.nav-link,
+.nav-dropdown-toggle {
+
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 7px;
+
+  color: #a8a8a8;
+
+  cursor: pointer;
+
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+
+.nav-link:hover,
+.nav-dropdown-toggle:hover,
+.nav-link.active {
+
+  color: white;
+
+}
+
+
+/* SVG ICONS */
+
+.nav-link svg,
+.nav-dropdown-toggle svg,
+.search-icon svg {
+
+  flex-shrink: 0;
+
+}
+
+
+/* REMOVE DEFAULT DETAILS ARROW */
+
+.nav-dropdown summary {
+
+  list-style: none;
+
+}
+
+.nav-dropdown summary::-webkit-details-marker {
+
+  display: none;
+
+}
+
+
+/* BROWSE DROPDOWN */
+
+.nav-dropdown {
+
+  position: relative;
+
+}
+
+
+.nav-dropdown-toggle {
+
+  user-select: none;
+
+}
+
+
+.nav-dropdown-toggle svg:last-child {
+
+  transition:
+    transform 0.2s ease;
+
+}
+
+
+.nav-dropdown[open]
+.nav-dropdown-toggle
+svg:last-child {
+
+  transform: rotate(180deg);
+
+}
+
+
+/* DROPDOWN MENU */
+
+.nav-dropdown-menu {
+
+  position: absolute;
+
+  top: calc(100% + 12px);
+
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  min-width: 150px;
+
+  padding: 7px;
+
+  background: #151515;
+
+  border: 1px solid #2c2c2c;
+
+  border-radius: 10px;
+
+  box-shadow:
+    0 12px 35px rgba(0,0,0,0.5);
+
+  z-index: 1000;
+
+}
+
+
+/* DROPDOWN ITEMS */
+
+.nav-dropdown-item {
+
+  display: block;
+
+  padding: 10px 12px;
+
+  border-radius: 7px;
+
+  color: #bdbdbd;
+
+  font-size: 13px;
+
+  transition:
+    background 0.15s ease,
+    color 0.15s ease;
+
+}
+
+
+.nav-dropdown-item:hover {
+
+  background: #252525;
+
+  color: white;
+
+}
+
+
+/* SEARCH */
+
+.search-icon {
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  color: #a8a8a8;
+
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
+
+}
+
+
+.search-icon:hover {
+
+  color: white;
+
+  transform: scale(1.08);
+
+}
+
