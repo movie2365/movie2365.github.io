@@ -861,12 +861,7 @@ let currentFilter = "all";
 const urlParams = new URLSearchParams(window.location.search);
 const urlQuery = urlParams.get("q");
 
-const isRandom = urlParams.get("random") === "1";
 
-if (isRandom) {
-    pickRandomContent();
-    return;
-}
   
 if(urlQuery){
     searchInput.value = urlQuery;
@@ -875,7 +870,6 @@ if(urlQuery){
 if(!searchInput || !resultsGrid){
 return;
 }
-
 
 function performSearch(){
 
@@ -1945,6 +1939,17 @@ fallback.classList.add(
 // =======================
 // START APP
 // =======================
+
+const urlParams = new URLSearchParams(window.location.search);
+
+if (urlParams.get("random") === "1") {
+    pickRandomContent();
+} else {
+    renderHome();
+    renderSearch();
+    renderShowPage();
+    renderPlayer();
+}
 
 
 renderHome();
