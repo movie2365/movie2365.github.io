@@ -741,7 +741,7 @@ return `
 
 class="movie-card"
 
-href="show.html?id=${encodeURIComponent(show.id)}"
+href="/show.html?id=${encodeURIComponent(show.id)}"
 
 >
 
@@ -1050,7 +1050,7 @@ content.tag === "TV SHOW"
 
 ?
 
-`show.html?id=${encodeURIComponent(content.id)}`
+`/show.html?id=${encodeURIComponent(content.id)}`
 
 :
 
