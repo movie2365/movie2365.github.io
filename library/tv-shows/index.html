@@ -27,13 +27,14 @@
   <header class="site-header">
 
     <a class="brand" href="https://movie2365.github.io">
-     <img
-       src="/assets/movie2365-logo.png"
-       alt="Movie2365 logo"
-       style="width: 30px !important; height: 36px !important; object-fit: contain; flex: 0 0 36px;"
-     >
+      <img
+        src="/assets/movie2365-logo.png"
+        alt="Movie2365 logo"
+        style="width: 30px !important; height: 36px !important; object-fit: contain; flex: 0 0 36px;"
+      >
       <span>Movie2365</span>
     </a>
+
 
     <nav>
 
@@ -63,85 +64,88 @@
 
 
 
-<!-- =========================
-     LIBRARY
-     ========================= -->
-
-<main class="library-page">
-
-
-  <div class="library-header">
-
-    <h1>
-      TV Shows
-    </h1>
-
-    <p>
-      Browse all TV shows
-    </p>
-
-  </div>
-
-
-
   <!-- =========================
-       MOVIES / TV SWITCH
+       TV SHOW LIBRARY
        ========================= -->
 
-  <div class="library-switch">
-
-    <a
-      class="library-switch-button"
-      href="/library/movies/index.html"
-    >
-      🎬 Movies
-    </a>
+  <main class="library-page">
 
 
-    <a
-      class="library-switch-button active"
-      href="/library/tv-shows/index.html"
-    >
-      📺 TV Shows
-    </a>
+    <div class="library-header">
 
-  </div>
+      <h1>
+        TV Shows
+      </h1>
+
+      <p>
+        Browse all TV shows
+      </p>
+
+    </div>
 
 
 
-  <!-- =========================
-       TV GRID
-       ========================= -->
+    <!-- =========================
+         MOVIES / TV SWITCH
+         ========================= -->
 
-  <div
-    id="tv-library"
-    class="results-grid"
-  ></div>
+    <div class="library-switch">
 
-
-</main>
-
-
-
-<script src="/app.js"></script>
+      <a
+        class="library-switch-button"
+        href="/library/movies/index.html"
+      >
+        🎬 Movies
+      </a>
 
 
-<script>
+      <a
+        class="library-switch-button active"
+        href="/library/tv-shows/index.html"
+      >
+        📺 TV Shows
+      </a>
 
-const library = document.querySelector(
-  "#tv-library"
-);
+    </div>
 
 
-if(library && typeof shows !== "undefined"){
 
-  library.innerHTML = shows
-    .map(show => showCard(show))
-    .join("");
+    <!-- =========================
+         TV SHOW GRID
+         ========================= -->
 
-}
+    <div
+      id="tv-library"
+      class="movie-grid"
+    ></div>
 
-</script>
+
+  </main>
+
+
+
+  <script src="/app.js"></script>
+
+
+  <script>
+
+    const library = document.querySelector(
+      "#tv-library"
+    );
+
+
+    if (
+      library &&
+      typeof tvShows !== "undefined"
+    ) {
+
+      library.innerHTML = tvShows
+        .map(show => movieCard(show))
+        .join("");
+
+    }
+
+  </script>
 
 
 </body>
