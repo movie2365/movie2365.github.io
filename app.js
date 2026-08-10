@@ -943,6 +943,10 @@ filterButtons.forEach(button => {
 
 });
 
+if(urlQuery){
+    performSearch();
+}
+  
 }
 // =======================
 // ALL CONTENT
