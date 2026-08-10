@@ -3461,15 +3461,16 @@ svg:last-child {
     overflow: hidden;
 }
 
-.server-frame:not(.active) {
-    display: none;
-}
-
 .server-frame {
     position: relative;
     width: 100%;
     aspect-ratio: 16 / 9;
     background: #000;
+    overflow: hidden;
+}
+
+.server-frame:not(.active) {
+    display: none;
 }
 
 .player-play-button {
@@ -3488,7 +3489,6 @@ svg:last-child {
     background: transparent;
 
     cursor: pointer;
-
     z-index: 10;
 }
 
@@ -3497,6 +3497,7 @@ svg:last-child {
     width: 80px;
     height: 80px;
     object-fit: contain;
+    transition: transform 0.2s ease;
 }
 
 .player-play-button:hover .play-icon {
