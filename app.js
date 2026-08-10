@@ -1695,53 +1695,37 @@ href="javascript:history.back()"
 
 
 // =======================
-// CREATE IFRAMES
+// CREATE PLAYER FRAMES
 // =======================
 
-
 const availableServers =
-
-servers.filter(
-
-server => sources[server]
-
-);
-
-
-
-
-
+    servers.filter(server => sources[server]);
 
 stack.innerHTML =
+    availableServers
+        .map(
+            (server, index) => `
+            
+            <div
+                class="server-frame${index === 0 ? " active" : ""}"
+                data-server="${escapeHtml(server)}"
+                data-src="${escapeHtml(sources[server])}"
+            >
 
+                <button
+                    class="player-play-button"
+                    type="button"
+                    aria-label="Play ${escapeHtml(server)}"
+                >
+                    <span class="play-icon">▶</span>
+                    <span>Play</span>
+                </button>
 
-availableServers
-
-.map(
-
-(server,index)=>`
-
-
-<iframe
-
-class="server-frame${index === 0 ? " active":""}"
-
-data-server="${server}"
-
-src="${escapeHtml(sources[server])}"
-
-allowfullscreen
-
->
-
-</iframe>
-
-
-`
-
-)
-
-.join("");
+            </div>
+            
+            `
+        )
+        .join("");
 
 
 
@@ -1789,7 +1773,49 @@ ${server}
 
 
 
+// =======================
+// PLAYER PLAY BUTTONS
+// =======================
 
+document
+    .querySelectorAll(".player-play-button")
+    .forEach(button => {
+
+        button.addEventListener("click", () => {
+
+            const frame =
+                button.closest(".server-frame");
+
+            if (!frame) return;
+
+            const src =
+                frame.dataset.src;
+
+            if (!src) return;
+
+            // Create iframe only after clicking Play
+            const iframe =
+                document.createElement("iframe");
+
+            iframe.src = src;
+
+            iframe.setAttribute("allowfullscreen", "");
+
+            iframe.setAttribute(
+                "allow",
+                "autoplay; fullscreen"
+            );
+
+            iframe.className =
+                "player-iframe";
+
+            frame.innerHTML = "";
+
+            frame.appendChild(iframe);
+
+        });
+
+    });
 
 
 
@@ -1802,60 +1828,32 @@ ${server}
 
 function selectServer(server){
 
+    document
+        .querySelectorAll(".server-frame")
+        .forEach(frame => {
 
+            frame.classList.toggle(
+                "active",
+                frame.dataset.server === server
+            );
 
-document
+        });
 
-.querySelectorAll(".server-frame")
+    document
+        .querySelectorAll(".server-button")
+        .forEach(button => {
 
-.forEach(frame=>{
+            button.classList.toggle(
+                "active",
+                button.dataset.server === server
+            );
 
+        });
 
-frame.classList.toggle(
-
-"active",
-
-frame.dataset.server === server
-
-);
-
-
-});
-
-
-
-
-
-
-document
-
-.querySelectorAll(".server-button")
-
-.forEach(button=>{
-
-
-button.classList.toggle(
-
-"active",
-
-button.dataset.server === server
-
-);
-
-
-});
-
-
-
-fallback.classList.toggle(
-
-"visible",
-
-!sources[server]
-
-);
-
-
+    fallback.classList.toggle(
+        "visible",
+        !sources[server]
+    );
 
 }
 
