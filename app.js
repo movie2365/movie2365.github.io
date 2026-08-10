@@ -1829,35 +1829,68 @@ document
 // =======================
 
 
-function selectServer(server){
+function selectServer(server) {
+    document.querySelectorAll(".server-frame").forEach(frame => {
+        const isSelected = frame.dataset.server === server;
 
-    document
-        .querySelectorAll(".server-frame")
-        .forEach(frame => {
+        // Stop/unload the previous player
+        if (!isSelected) {
+            const iframe = frame.querySelector("iframe");
 
-            frame.classList.toggle(
-                "active",
-                frame.dataset.server === server
-            );
+            if (iframe) {
+                iframe.src = "about:blank";
+                iframe.remove();
+            }
 
-        });
+            // Restore the Play button
+            frame.innerHTML = `
+                <button
+                    class="player-play-button"
+                    type="button"
+                    aria-label="Play ${escapeHtml(frame.dataset.server)}"
+                >
+                    <img
+                        src="/assets/play-icon.png"
+                        alt="Play"
+                        class="play-icon"
+                    >
+                </button>
+            `;
+        }
 
-    document
-        .querySelectorAll(".server-button")
-        .forEach(button => {
+        frame.classList.toggle("active", isSelected);
+    });
 
-            button.classList.toggle(
-                "active",
-                button.dataset.server === server
-            );
-
-        });
+    document.querySelectorAll(".server-button").forEach(button => {
+        button.classList.toggle(
+            "active",
+            button.dataset.server === server
+        );
+    });
 
     fallback.classList.toggle(
         "visible",
-        !sources[server]
+        !server
     );
 
+    // Reattach Play behavior to the restored buttons
+    document.querySelectorAll(".player-play-button").forEach(button => {
+        button.onclick = () => {
+            const frame = button.closest(".server-frame");
+            const src = frame?.dataset.src;
+
+            if (!src) return;
+
+            const iframe = document.createElement("iframe");
+            iframe.src = src;
+            iframe.allowFullscreen = true;
+            iframe.allow = "autoplay; fullscreen";
+            iframe.className = "player-iframe";
+
+            frame.innerHTML = "";
+            frame.appendChild(iframe);
+        };
+    });
 }
 
 
