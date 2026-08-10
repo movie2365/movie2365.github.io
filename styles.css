@@ -326,6 +326,18 @@ nav a.active {
     transform 0.2s ease;
 }
 
+.search-button {
+  height: 49px;
+  min-width: 127px;
+  border: 0;
+  border-radius: 26px;
+  background: var(--red);
+  color: white;
+  font-weight: 800;
+  font-size: 14px;
+  cursor: pointer;
+}
+
 
 .search-bar button:hover {
 
