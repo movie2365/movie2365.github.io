@@ -814,6 +814,13 @@ const filterButtons = document.querySelectorAll(".filter");
 
 let currentFilter = "all";
 
+const urlParams = new URLSearchParams(window.location.search);
+const urlQuery = urlParams.get("q");
+
+if(urlQuery){
+    searchInput.value = urlQuery;
+}
+
 if(!searchInput || !resultsGrid){
 return;
 }
