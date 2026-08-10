@@ -1,524 +1,555 @@
-```html
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Request - Movie2365</title>
+```
+<title>Request - Movie2365</title>
 
-    <style>
-        :root {
-            --bg: #000000;
-            --panel: #151515;
-            --border: #2c2c2c;
-            --text: #f4f4f4;
-            --muted: #8f8f8f;
-            --red: #ed111c;
-            --red-dark: #a4070d;
-        }
+<style>
+    :root {
+        --bg: #000000;
+        --panel: #141414;
+        --border: #2c2c2c;
+        --text: #f4f4f4;
+        --red: #ed111c;
+    }
 
-        * {
-            box-sizing: border-box;
-        }
+    * {
+        box-sizing: border-box;
+    }
 
-        html,
-        body {
-            margin: 0;
-            min-height: 100%;
-            background: var(--bg);
-            color: var(--text);
-            font-family:
-                Inter,
-                ui-sans-serif,
-                system-ui,
-                -apple-system,
-                BlinkMacSystemFont,
-                "Segoe UI",
-                sans-serif;
-        }
+    html,
+    body {
+        margin: 0;
+        min-height: 100%;
+        background: var(--bg);
+    }
 
-        body {
-            min-height: 100vh;
-        }
+    body {
+        color: var(--text);
+        font-family:
+            Inter,
+            ui-sans-serif,
+            system-ui,
+            -apple-system,
+            BlinkMacSystemFont,
+            "Segoe UI",
+            sans-serif;
+    }
 
-        a {
-            color: inherit;
-            text-decoration: none;
-        }
+    a {
+        color: inherit;
+        text-decoration: none;
+    }
 
-        /* =========================
-           HEADER
-        ========================= */
+    /* =========================
+       HEADER
+    ========================= */
+
+    .site-header {
+        height: 64px;
+        max-width: 1240px;
+        margin: 0 auto;
+        padding: 0 2px;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .brand {
+        display: inline-flex;
+        align-items: center;
+        gap: 13px;
+
+        font-size: 29px;
+        font-weight: 800;
+        letter-spacing: -1px;
+    }
+
+    .brand-mark {
+        width: 37px;
+        height: 37px;
+
+        display: grid;
+        place-items: center;
+
+        border-radius: 12px;
+
+        color: white;
+        background: var(--red);
+
+        font-size: 18px;
+    }
+
+    nav {
+        display: flex;
+        align-items: center;
+        gap: 26px;
+
+        color: #a8a8a8;
+
+        font-size: 14px;
+        font-weight: 650;
+    }
+
+    nav a {
+        transition: color 0.2s ease;
+    }
+
+    nav a:hover,
+    nav a.active {
+        color: white;
+    }
+
+    /* =========================
+       REQUEST PAGE
+    ========================= */
+
+    .request-page {
+        min-height: calc(100vh - 64px);
+
+        padding: 70px 20px 100px;
+
+        display: flex;
+        justify-content: center;
+
+        background:
+            radial-gradient(
+                ellipse at 50% 0%,
+                rgba(110, 0, 8, 0.34),
+                transparent 55%
+            ),
+            linear-gradient(
+                #070000,
+                #000000 76%
+            );
+    }
+
+    .request-container {
+        width: min(600px, 100%);
+    }
+
+    .request-title {
+        margin: 0 0 10px;
+
+        text-align: center;
+
+        font-size: 36px;
+        letter-spacing: -0.8px;
+    }
+
+    .request-subtitle {
+        margin: 0 0 35px;
+
+        text-align: center;
+
+        color: #999;
+        font-size: 15px;
+    }
+
+    /* =========================
+       FORM
+    ========================= */
+
+    .request-form {
+        padding: 28px;
+
+        background: #141414;
+
+        border: 1px solid #292929;
+        border-radius: 14px;
+
+        box-shadow:
+            0 15px 50px rgba(0, 0, 0, 0.4);
+    }
+
+    .form-group {
+        margin-bottom: 22px;
+    }
+
+    .form-group label {
+        display: block;
+
+        margin-bottom: 9px;
+
+        color: #ddd;
+
+        font-size: 13px;
+        font-weight: 700;
+    }
+
+    .form-group input,
+    .form-group select {
+        width: 100%;
+        height: 50px;
+
+        padding: 0 15px;
+
+        border: 1px solid #333;
+        border-radius: 9px;
+
+        outline: none;
+
+        background: #0d0d0d;
+        color: white;
+
+        font-size: 14px;
+
+        transition:
+            border-color 0.2s ease,
+            box-shadow 0.2s ease;
+    }
+
+    .form-group input::placeholder {
+        color: #666;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus {
+        border-color: var(--red);
+
+        box-shadow:
+            0 0 0 2px rgba(237, 17, 28, 0.12);
+    }
+
+    .form-group select {
+        cursor: pointer;
+    }
+
+    /* =========================
+       SUBMIT BUTTON
+    ========================= */
+
+    .submit-button {
+        width: 100%;
+        height: 50px;
+
+        border: 0;
+        border-radius: 9px;
+
+        background: var(--red);
+        color: white;
+
+        font-size: 14px;
+        font-weight: 800;
+
+        cursor: pointer;
+
+        transition:
+            background 0.2s ease,
+            transform 0.2s ease;
+    }
+
+    .submit-button:hover {
+        background: #ff1d29;
+        transform: translateY(-1px);
+    }
+
+    .submit-button:active {
+        transform: translateY(0);
+    }
+
+    .submit-button:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+        transform: none;
+    }
+
+    /* =========================
+       MESSAGE
+    ========================= */
+
+    .form-message {
+        display: none;
+
+        margin-top: 15px;
+        padding: 12px;
+
+        border-radius: 8px;
+
+        text-align: center;
+        font-size: 13px;
+    }
+
+    .form-message.success {
+        display: block;
+
+        color: #8cff9a;
+
+        background: rgba(30, 130, 45, 0.12);
+
+        border: 1px solid rgba(50, 160, 65, 0.35);
+    }
+
+    .form-message.error {
+        display: block;
+
+        color: #ff8c8c;
+
+        background: rgba(160, 30, 30, 0.12);
+
+        border: 1px solid rgba(180, 40, 40, 0.35);
+    }
+
+    /* =========================
+       MOBILE
+    ========================= */
+
+    @media (max-width: 700px) {
 
         .site-header {
-            height: 64px;
-            max-width: 1240px;
-            margin: 0 auto;
-            padding: 0 2px;
-
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
+            height: 58px;
+            padding: 0 15px;
         }
 
         .brand {
-            display: inline-flex;
-            align-items: center;
-            gap: 13px;
-
-            font-size: 29px;
-            font-weight: 800;
-            letter-spacing: -1px;
+            font-size: 23px;
+            gap: 9px;
         }
 
         .brand-mark {
-            width: 37px;
-            height: 37px;
-
-            display: grid;
-            place-items: center;
-
-            border-radius: 12px;
-            background: var(--red);
-
-            color: white;
-            font-size: 18px;
-            font-weight: 900;
+            width: 31px;
+            height: 31px;
+            border-radius: 10px;
         }
 
         nav {
-            display: flex;
-            align-items: center;
-            gap: 26px;
-
-            color: #a8a8a8;
-            font-size: 14px;
-            font-weight: 650;
+            gap: 12px;
+            font-size: 11px;
         }
 
-        nav a {
-            transition: color 0.2s ease;
+        nav a:nth-child(3) {
+            display: none;
         }
-
-        nav a:hover,
-        nav a.active {
-            color: white;
-        }
-
-        /* =========================
-           PAGE
-        ========================= */
 
         .request-page {
-            min-height: calc(100vh - 64px);
-
-            display: flex;
-            justify-content: center;
-            align-items: flex-start;
-
-            padding: 70px 20px 100px;
-
-            background:
-                radial-gradient(
-                    ellipse at 50% 0%,
-                    rgba(110, 0, 8, 0.34),
-                    transparent 55%
-                ),
-                linear-gradient(
-                    #070000,
-                    #000000 76%
-                );
-        }
-
-        .request-container {
-            width: 100%;
-            max-width: 560px;
+            padding: 45px 15px 70px;
         }
 
         .request-title {
-            margin: 0;
-            text-align: center;
-
-            font-size: 34px;
-            font-weight: 800;
-            letter-spacing: -0.8px;
+            font-size: 28px;
         }
 
         .request-subtitle {
-            margin: 10px 0 35px;
-
-            text-align: center;
-            color: #929292;
-
-            font-size: 14px;
+            font-size: 13px;
+            margin-bottom: 27px;
         }
-
-        /* =========================
-           FORM
-        ========================= */
 
         .request-form {
-            padding: 28px;
-
-            background: var(--panel);
-            border: 1px solid var(--border);
-            border-radius: 14px;
-
-            box-shadow:
-                0 15px 45px rgba(0, 0, 0, 0.45);
+            padding: 20px;
+            border-radius: 12px;
         }
+    }
+</style>
+```
 
-        .form-group {
-            margin-bottom: 22px;
-        }
-
-        .form-group:last-of-type {
-            margin-bottom: 25px;
-        }
-
-        label {
-            display: block;
-
-            margin-bottom: 9px;
-
-            color: #d7d7d7;
-            font-size: 13px;
-            font-weight: 700;
-        }
-
-        input,
-        select {
-            width: 100%;
-            height: 50px;
-
-            padding: 0 15px;
-
-            border: 1px solid #343434;
-            border-radius: 9px;
-
-            outline: none;
-
-            background: #0d0d0d;
-            color: white;
-
-            font-family: inherit;
-            font-size: 14px;
-
-            transition:
-                border-color 0.2s ease,
-                background 0.2s ease;
-        }
-
-        input::placeholder {
-            color: #686868;
-        }
-
-        input:focus,
-        select:focus {
-            border-color: var(--red);
-            background: #111111;
-        }
-
-        select {
-            cursor: pointer;
-        }
-
-        /* =========================
-           SUBMIT BUTTON
-        ========================= */
-
-        .submit-button {
-            width: 100%;
-            height: 50px;
-
-            border: 0;
-            border-radius: 9px;
-
-            background: var(--red);
-            color: white;
-
-            font-family: inherit;
-            font-size: 14px;
-            font-weight: 800;
-
-            cursor: pointer;
-
-            transition:
-                background 0.2s ease,
-                transform 0.2s ease;
-        }
-
-        .submit-button:hover {
-            background: #ff1d29;
-            transform: translateY(-1px);
-        }
-
-        .submit-button:active {
-            transform: translateY(0);
-        }
-
-        .submit-button:disabled {
-            opacity: 0.6;
-            cursor: not-allowed;
-            transform: none;
-        }
-
-        /* =========================
-           MESSAGE
-        ========================= */
-
-        .form-message {
-            display: none;
-
-            margin-top: 15px;
-            padding: 12px;
-
-            border-radius: 8px;
-
-            text-align: center;
-            font-size: 13px;
-        }
-
-        .form-message.success {
-            display: block;
-
-            color: #8cff9a;
-            background: rgba(30, 130, 45, 0.12);
-            border: 1px solid rgba(50, 160, 65, 0.35);
-        }
-
-        .form-message.error {
-            display: block;
-
-            color: #ff8c8c;
-            background: rgba(160, 30, 30, 0.12);
-            border: 1px solid rgba(180, 40, 40, 0.35);
-        }
-
-        /* =========================
-           MOBILE
-        ========================= */
-
-        @media (max-width: 700px) {
-
-            .site-header {
-                height: 58px;
-                padding: 0 15px;
-            }
-
-            .brand {
-                font-size: 23px;
-                gap: 9px;
-            }
-
-            .brand-mark {
-                width: 31px;
-                height: 31px;
-                border-radius: 10px;
-            }
-
-            nav {
-                gap: 12px;
-                font-size: 11px;
-            }
-
-            nav a:nth-child(3) {
-                display: none;
-            }
-
-            .request-page {
-                padding: 45px 15px 70px;
-            }
-
-            .request-title {
-                font-size: 28px;
-            }
-
-            .request-subtitle {
-                font-size: 13px;
-                margin-bottom: 27px;
-            }
-
-            .request-form {
-                padding: 20px;
-                border-radius: 12px;
-            }
-        }
-    </style>
 </head>
 
 <body>
 
-    <!-- HEADER -->
+```
+<!-- HEADER -->
 
-    <header class="site-header">
+<header class="site-header">
 
-        <a href="index.html" class="brand">
-            <span class="brand-mark">▶</span>
-            Movie2365
-        </a>
+    <a href="index.html" class="brand">
+        <span class="brand-mark">▶</span>
+        Movie2365
+    </a>
 
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="movies.html">Movies</a>
-            <a href="tv.html">TV Shows</a>
-            <a href="request.html" class="active">Request</a>
-        </nav>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="movies.html">Movies</a>
+        <a href="tv.html">TV Shows</a>
+        <a href="request.html" class="active">Request</a>
+    </nav>
 
-    </header>
-
-
-    <!-- REQUEST PAGE -->
-
-    <main class="request-page">
-
-        <div class="request-container">
-
-            <h1 class="request-title">
-                Request a Movie or Show
-            </h1>
-
-            <p class="request-subtitle">
-                Tell us what you'd like to see added.
-            </p>
+</header>
 
 
-            <form
-                id="requestForm"
-                class="request-form"
-                action="YOUR_FORM_ENDPOINT_HERE"
-                method="POST"
+<!-- REQUEST PAGE -->
+
+<main class="request-page">
+
+    <div class="request-container">
+
+        <h1 class="request-title">
+            Request a Movie or Show
+        </h1>
+
+        <p class="request-subtitle">
+            Tell us what you'd like to see added.
+        </p>
+
+
+        <!-- WEB3FORMS -->
+
+        <form
+            id="requestForm"
+            class="request-form"
+            action="https://api.web3forms.com/submit"
+            method="POST"
+        >
+
+            <!-- YOUR WEB3FORMS ACCESS KEY -->
+
+            <input
+                type="hidden"
+                name="access_key"
+                value="91f49f88-d8b4-4ecb-8a3d-efbf2d6ef75f"
             >
 
-                <!-- MOVIE / SHOW NAME -->
+            <!-- EMAIL SUBJECT -->
 
-                <div class="form-group">
+            <input
+                type="hidden"
+                name="Request"
+                value="New Movie2365 Request"
+            >
 
-                    <label for="title">
-                        What movie/show do you want me to add?
-                    </label>
+            <!-- MOVIE / SHOW NAME -->
 
-                    <input
-                        type="text"
-                        id="title"
-                        name="title"
-                        placeholder="Enter a movie or show"
-                        autocomplete="off"
-                        required
-                    >
+            <div class="form-group">
 
-                </div>
+                <label for="title">
+                    What movie/show do you want me to add?
+                </label>
 
-
-                <!-- TYPE -->
-
-                <div class="form-group">
-
-                    <label for="type">
-                        Type
-                    </label>
-
-                    <select
-                        id="type"
-                        name="type"
-                        required
-                    >
-
-                        <option value="Movie">
-                            Movie
-                        </option>
-
-                        <option value="TV Show">
-                            TV Show
-                        </option>
-
-                    </select>
-
-                </div>
-
-
-                <!-- SUBMIT -->
-
-                <button
-                    type="submit"
-                    class="submit-button"
-                    id="submitButton"
+                <input
+                    type="text"
+                    id="title"
+                    name="title"
+                    placeholder="Enter a movie or show"
+                    autocomplete="off"
+                    required
                 >
-                    Submit Request
-                </button>
 
-                <div
-                    id="formMessage"
-                    class="form-message"
-                ></div>
-
-            </form>
-
-        </div>
-
-    </main>
+            </div>
 
 
-    <script>
+            <!-- TYPE -->
 
-        const form = document.getElementById("requestForm");
-        const submitButton = document.getElementById("submitButton");
-        const formMessage = document.getElementById("formMessage");
+            <div class="form-group">
 
-        form.addEventListener("submit", async function(event) {
+                <label for="type">
+                    Type
+                </label>
 
-            event.preventDefault();
+                <select
+                    id="type"
+                    name="type"
+                    required
+                >
 
-            submitButton.disabled = true;
-            submitButton.textContent = "Submitting...";
+                    <option value="Movie">
+                        Movie
+                    </option>
 
-            formMessage.className = "form-message";
-            formMessage.textContent = "";
+                    <option value="TV Show">
+                        TV Show
+                    </option>
 
-            try {
+                </select>
 
-                const response = await fetch(form.action, {
+            </div>
+
+
+            <!-- SUBMIT -->
+
+            <button
+                type="submit"
+                class="submit-button"
+                id="submitButton"
+            >
+                Submit Request
+            </button>
+
+
+            <div
+                id="formMessage"
+                class="form-message"
+            ></div>
+
+        </form>
+
+    </div>
+
+</main>
+
+
+<script>
+
+    const form = document.getElementById("requestForm");
+    const submitButton = document.getElementById("submitButton");
+    const formMessage = document.getElementById("formMessage");
+
+
+    form.addEventListener("submit", async function(event) {
+
+        event.preventDefault();
+
+        submitButton.disabled = true;
+        submitButton.textContent = "Submitting...";
+
+        formMessage.className = "form-message";
+        formMessage.textContent = "";
+
+
+        try {
+
+            const response = await fetch(
+                form.action,
+                {
                     method: "POST",
+
                     body: new FormData(form),
+
                     headers: {
                         "Accept": "application/json"
                     }
-                });
-
-                if (response.ok) {
-
-                    form.reset();
-
-                    formMessage.className =
-                        "form-message success";
-
-                    formMessage.textContent =
-                        "Request submitted successfully!";
-
-                } else {
-
-                    throw new Error("Submission failed");
-
                 }
+            );
 
-            } catch (error) {
+
+            if (response.ok) {
+
+                form.reset();
 
                 formMessage.className =
-                    "form-message error";
+                    "form-message success";
 
                 formMessage.textContent =
-                    "Something went wrong. Please try again.";
+                    "Request submitted successfully!";
+
+            } else {
+
+                throw new Error("Submission failed");
 
             }
 
-            submitButton.disabled = false;
-            submitButton.textContent = "Submit Request";
 
-        });
+        } catch (error) {
 
-    </script>
+            formMessage.className =
+                "form-message error";
+
+            formMessage.textContent =
+                "Something went wrong. Please try again.";
+
+        }
+
+
+        submitButton.disabled = false;
+        submitButton.textContent = "Submit Request";
+
+    });
+
+</script>
+```
 
 </body>
 </html>
-```
