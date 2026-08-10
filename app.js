@@ -90,7 +90,7 @@ id:"apex",
 title:"Apex",
 year:2026,
 rating:"6.4",
-poster:"/https://cineby.ws/images/posters/movies/apex-1-2026.webp",
+poster:"https://cineby.ws/images/posters/movies/apex-1-2026.webp",
 tag:"MOVIE"
 },
 
