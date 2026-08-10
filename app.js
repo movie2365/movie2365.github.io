@@ -88,7 +88,7 @@ const movieIds = {
 "reminders-of-him":"1337562",
 "avatar-fire-and-ash":"83533",
 "mortal-kombat-ii":"1046090",
-"supergirl":"1061474",
+"supergirl":"1081003",
 "avengers-doomsday":"1000889",
 "moana":"83723",
 "evil-dead-burn":"1457577",
