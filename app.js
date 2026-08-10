@@ -78,21 +78,21 @@ const movieIds = {
 "apex":"1318447",
 
 "spider-man-brand-new-day":"969681",
-"the-odyssey":"1234821",
-"toy-story-5":"1371727",
-"the-super-mario-galaxy-movie":"1311031",
-"project-hail-mary":"1184918",
-"hoppers":"1227897",
-"wuthering-heights":"1136867",
-"goat":"1302179",
-"reminders-of-him":"1337562",
+"the-odyssey":"1368337",
+"toy-story-5":"1084244",
+"the-super-mario-galaxy-movie":"1226863",
+"project-hail-mary":"687163",
+"hoppers":"1327819",
+"wuthering-heights":"1316092",
+"goat":"1297842",
+"reminders-of-him":"1367642",
 "avatar-fire-and-ash":"83533",
-"mortal-kombat-ii":"1046090",
+"mortal-kombat-ii":"931285",
 "supergirl":"1081003",
-"avengers-doomsday":"1000889",
-"moana":"83723",
-"evil-dead-burn":"1457577",
-"masters-of-the-universe":"1459370"
+"avengers-doomsday":"1003596",
+"moana":"1108427",
+"evil-dead-burn":"1212763",
+"masters-of-the-universe":"454639"
 
 };
 
