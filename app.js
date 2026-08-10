@@ -809,14 +809,10 @@ const searchInput = document.querySelector("#search-input");
 const resultsGrid = document.querySelector("#results-grid");
 const resultCount = document.querySelector("#result-count");
 const clearButton = document.querySelector("#clear-search");
-const searchButton = document.querySelector("#search-button");
+const searchForm = document.querySelector("#results-search");
 
 if(!searchInput || !resultsGrid){
 return;
-}
-
-if(resultCount){
-resultCount.textContent = "";
 }
 
 function performSearch(){
@@ -859,45 +855,37 @@ resultCount.textContent = `${results.length} results`;
 
 }
 
-searchInput.addEventListener(
-"keydown",
-event =>{
+if(searchForm){
 
-if(event.key === "Enter"){
+searchForm.addEventListener("submit", event => {
+
+event.preventDefault();
+
 performSearch();
-}
 
 });
-
-if(searchButton){
-
-searchButton.addEventListener(
-"click",
-performSearch
-);
 
 }
 
 if(clearButton){
 
-clearButton.addEventListener(
-"click",
-()=>{
+clearButton.addEventListener("click", () => {
 
 searchInput.value = "";
+
 resultsGrid.innerHTML = "";
 
 if(resultCount){
 resultCount.textContent = "";
 }
 
-}
-);
+searchInput.focus();
+
+});
 
 }
 
 }
-
 // =======================
 // ALL CONTENT
 // =======================
