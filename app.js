@@ -37,6 +37,9 @@ const movies = [
 {id:"moana",title:"Moana",year:2026,rating:"0.0",poster:"https://cineby.ws/images/posters/movies/moana-1-2026.webp",tag:"MOVIE"},
 {id:"evil-dead-burn",title:"Evil Dead Burn",year:2026,rating:"6.8",poster:"https://cineby.ws/images/posters/movies/evil-dead-burn-2026.webp",tag:"MOVIE"},
 {id:"masters-of-the-universe",title:"Masters of the Universe",year:2026,rating:"0.0",poster:"https://cineby.ws/images/posters/movies/masters-of-the-universe-1-2026.webp",tag:"MOVIE"},
+{id:"spider-man-homecoming",title:"Spider-Man: Homecoming",year:2017,rating:"7.4",poster:"https://cineby.ws/images/posters/movies/spider-man-homecoming-2017.webp",tag:"MOVIE"},
+{id:"spider-man-far-from-home",title:"Spider-Man: Far From Home",year:2019,rating:"7.3",poster:"https://cineby.ws/images/posters/movies/spider-man-far-from-home-2019.webp",tag:"MOVIE"},
+{id:"spider-man-no-way-home",title:"Spider-Man: No Way Home",year:2021,rating:"8.1",poster:"https://cineby.ws/images/posters/movies/spider-man-no-way-home-2021.webp",tag:"MOVIE"},
 
 ];
 
@@ -92,7 +95,10 @@ const movieIds = {
 "avengers-doomsday":"1003596",
 "moana":"1108427",
 "evil-dead-burn":"1212763",
-"masters-of-the-universe":"454639"
+"spider-man-far-from-home":"454639",
+"spider-man-homecoming":"1108427",
+"spider-man-no-way-home":"1212763",
+"masters-of-the-universe":"454639",
 
 };
 
