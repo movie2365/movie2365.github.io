@@ -95,9 +95,9 @@ const movieIds = {
 "avengers-doomsday":"1003596",
 "moana":"1108427",
 "evil-dead-burn":"1212763",
-"spider-man-far-from-home":"454639",
-"spider-man-homecoming":"1108427",
-"spider-man-no-way-home":"1212763",
+"spider-man-far-from-home":"429617",
+"spider-man-homecoming":"315635",
+"spider-man-no-way-home":"634649",
 "masters-of-the-universe":"454639",
 
 };
